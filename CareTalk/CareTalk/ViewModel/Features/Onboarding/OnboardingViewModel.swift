@@ -10,4 +10,5 @@ import SwiftUI
 
 class OnboardingViewModel: ObservableObject {
     @Published var showLogo: Bool = true
+    @Published var showIntroText: Bool = false
 }

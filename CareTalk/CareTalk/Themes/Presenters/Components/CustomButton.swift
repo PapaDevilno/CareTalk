@@ -12,13 +12,13 @@ struct RoundedButton: View {
     var body: some View {
         ZStack(alignment: .leading) {
             Text(text)
-                .padding(.vertical,20)
-                .padding(.horizontal, 120)
-                .foregroundColor(.blue)
+                .padding(.vertical,15)
+                .padding(.horizontal, 60)
+                .foregroundColor(.black)
                 .fontWeight(.bold)
                 .font(.system(size: 18))
                 .background(
-                    RoundedRectangle(cornerRadius: 30)
+                    RoundedRectangle(cornerRadius: 25)
                         .fill(.white)
                         .shadow(radius: 3)
                 )
@@ -27,5 +27,5 @@ struct RoundedButton: View {
 }
 
 #Preview {
-    RoundedButton(text: "Hello")
+    RoundedButton(text: "Pelajari Lebih lanjut")
 }
