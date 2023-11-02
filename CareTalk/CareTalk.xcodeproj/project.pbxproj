@@ -11,6 +11,8 @@
 		680B4D802AE20FDE0047EDBA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680B4D7F2AE20FDE0047EDBA /* ContentView.swift */; };
 		680B4D822AE20FDE0047EDBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 680B4D812AE20FDE0047EDBA /* Assets.xcassets */; };
 		680B4D852AE20FDE0047EDBA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 680B4D842AE20FDE0047EDBA /* Preview Assets.xcassets */; };
+		686040022AF214D100543524 /* YourViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686040012AF214D100543524 /* YourViewModel.swift */; };
+		686040042AF2150B00543524 /* YourModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686040032AF2150B00543524 /* YourModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		680B4D7F2AE20FDE0047EDBA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		680B4D812AE20FDE0047EDBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		680B4D842AE20FDE0047EDBA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		686040012AF214D100543524 /* YourViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourViewModel.swift; sourceTree = "<group>"; };
+		686040032AF2150B00543524 /* YourModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +55,13 @@
 		680B4D7C2AE20FDE0047EDBA /* CareTalk */ = {
 			isa = PBXGroup;
 			children = (
-				680B4D7D2AE20FDE0047EDBA /* CareTalkApp.swift */,
-				680B4D7F2AE20FDE0047EDBA /* ContentView.swift */,
-				680B4D812AE20FDE0047EDBA /* Assets.xcassets */,
+				68603FFA2AF213D900543524 /* Model */,
+				68603FFB2AF213E400543524 /* View */,
+				68603FFC2AF2140D00543524 /* ViewModel */,
+				68603FFD2AF2142200543524 /* Services */,
+				68603FFE2AF2143100543524 /* Extensions */,
+				68603FFF2AF2144B00543524 /* Resources */,
+				686040002AF2145D00543524 /* SupportingFiles */,
 				680B4D832AE20FDE0047EDBA /* Preview Content */,
 			);
 			path = CareTalk;
@@ -65,6 +73,60 @@
 				680B4D842AE20FDE0047EDBA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		68603FFA2AF213D900543524 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				686040032AF2150B00543524 /* YourModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		68603FFB2AF213E400543524 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				680B4D7F2AE20FDE0047EDBA /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		68603FFC2AF2140D00543524 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				686040012AF214D100543524 /* YourViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		68603FFD2AF2142200543524 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		68603FFE2AF2143100543524 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		68603FFF2AF2144B00543524 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				680B4D812AE20FDE0047EDBA /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		686040002AF2145D00543524 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				680B4D7D2AE20FDE0047EDBA /* CareTalkApp.swift */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +199,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				686040022AF214D100543524 /* YourViewModel.swift in Sources */,
 				680B4D802AE20FDE0047EDBA /* ContentView.swift in Sources */,
+				686040042AF2150B00543524 /* YourModel.swift in Sources */,
 				680B4D7E2AE20FDE0047EDBA /* CareTalkApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
