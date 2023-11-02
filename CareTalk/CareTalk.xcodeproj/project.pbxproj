@@ -15,6 +15,8 @@
 		686040042AF2150B00543524 /* YourModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686040032AF2150B00543524 /* YourModel.swift */; };
 		68D6BD2D2AF33B4D0034533D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D6BD2C2AF33B4D0034533D /* OnboardingView.swift */; };
 		68D6BD2F2AF33B930034533D /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D6BD2E2AF33B930034533D /* OnboardingViewModel.swift */; };
+		68D6BD382AF354F80034533D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D6BD372AF354F80034533D /* CustomButton.swift */; };
+		68D6BD3D2AF35D610034533D /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D6BD3C2AF35D610034533D /* AppColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		686040032AF2150B00543524 /* YourModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourModel.swift; sourceTree = "<group>"; };
 		68D6BD2C2AF33B4D0034533D /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		68D6BD2E2AF33B930034533D /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		68D6BD372AF354F80034533D /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		68D6BD3C2AF35D610034533D /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 				68603FFC2AF2140D00543524 /* ViewModel */,
 				68603FFD2AF2142200543524 /* Services */,
 				68603FFE2AF2143100543524 /* Extensions */,
+				68D6BD342AF354B30034533D /* Themes */,
 				68603FFF2AF2144B00543524 /* Resources */,
 				686040002AF2145D00543524 /* SupportingFiles */,
 				680B4D832AE20FDE0047EDBA /* Preview Content */,
@@ -167,6 +172,39 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		68D6BD342AF354B30034533D /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				68D6BD3B2AF35D540034533D /* Colors */,
+				68D6BD352AF354BF0034533D /* Presenters */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		68D6BD352AF354BF0034533D /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				68D6BD362AF354C60034533D /* Components */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		68D6BD362AF354C60034533D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				68D6BD372AF354F80034533D /* CustomButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		68D6BD3B2AF35D540034533D /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				68D6BD3C2AF35D610034533D /* AppColor.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -241,8 +279,10 @@
 				68D6BD2F2AF33B930034533D /* OnboardingViewModel.swift in Sources */,
 				680B4D802AE20FDE0047EDBA /* ContentView.swift in Sources */,
 				686040042AF2150B00543524 /* YourModel.swift in Sources */,
+				68D6BD382AF354F80034533D /* CustomButton.swift in Sources */,
 				68D6BD2D2AF33B4D0034533D /* OnboardingView.swift in Sources */,
 				680B4D7E2AE20FDE0047EDBA /* CareTalkApp.swift in Sources */,
+				68D6BD3D2AF35D610034533D /* AppColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

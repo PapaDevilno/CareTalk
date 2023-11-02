@@ -22,7 +22,7 @@ struct OnboardingView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 100)
                     
-                    Text("CareTalk")
+                    Text("EVA")
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(.blue)
@@ -39,20 +39,17 @@ struct OnboardingView: View {
             if !viewModel.showLogo {
                 ZStack {
                     VStack(alignment: .leading) {
-                        Text("Welcome to\nCareTalk!")
-                            .font(.largeTitle)
+                        Text("Halo,\nAku Eva")
+                            .font(.system(size: 40))
                             .fontWeight(.bold)
-                            .foregroundColor(.primary)
-                        
-                        Text("What do your friends call you?")
-                            .font(.subheadline)
-                            .fontWeight(.bold)
-                            .foregroundColor(.primary)
+                            .foregroundColor(.white)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.leading)
+                    .padding(.leading, 25)
                 }
-                .background("")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(AppColor.blue)
+                .ignoresSafeArea()
             }
         }
     }
