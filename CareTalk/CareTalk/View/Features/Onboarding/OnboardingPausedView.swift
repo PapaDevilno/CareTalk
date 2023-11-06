@@ -1,13 +1,13 @@
 //
-//  OnboardingListeningView.swift
+//  OnboardingPausedView.swift
 //  CareTalk
 //
-//  Created by Nicholas Yvees on 03/11/23.
+//  Created by Nicholas Yvees on 06/11/23.
 //
 
 import SwiftUI
 
-struct OnboardingListeningView: View {
+struct OnboardingPausedView: View {
     
     @ObservedObject var viewModel: OnboardingViewModel
     
@@ -16,16 +16,16 @@ struct OnboardingListeningView: View {
             ZStack{
                 VStack {
                     VStack{
-                        Text("Ucapkan sesuatu...")
+                        Text("Transcription") //This is for transcription
                             .font(.system(size: 20))
                             .fontWeight(.semibold)
-                            .foregroundColor(AppColor.blue)
+                            .foregroundColor(AppColor.pink)
                     }
                     .frame(maxWidth: .infinity, alignment: .center)
                     .padding(EdgeInsets(top: 100, leading: 0, bottom: 0, trailing: 0))
                     
                     if viewModel.animationComplete {
-                        NavigationLink(destination: OnboardingPausedView(viewModel: OnboardingViewModel()), isActive: $viewModel.navigateToNextView) {
+                        NavigationLink(destination: OnboardingStopView(viewModel: OnboardingViewModel()), isActive: $viewModel.navigateToNextView) {
                             EmptyView()
                         }
                     } else {
@@ -41,32 +41,32 @@ struct OnboardingListeningView: View {
                                 viewModel.navigateToNextView = true
                             }
                         }) {
-                            Image("Pause_Button")
+                            Image("Play_Button")
                                 .resizable()
-                                .frame(width: viewModel.isLongPressing ? 4000 : 100, height: viewModel.isLongPressing ? 4000 : 100)
+                                .frame(width: viewModel.isLongPressing ? 2000 : 100, height: viewModel.isLongPressing ? 2000 : 100)
                                 .scaledToFit()
                         }
                     }
                     
                     VStack{
-                        Text("Aku sedang mendengarkanmu\nsekarang. Kamu dapat melihat \nkata-kata yang diterjemahkan di\nlayar ini")
+                        Text("Saat ini aku sedang tidak\nmendengarkan suaramu, namun\nsemua interpretasi yang sudah\nada akan tetap ada")
                             .font(.system(size:20))
                             .fontWeight(.medium)
-                            .foregroundColor(AppColor.blue)
+                            .foregroundColor(AppColor.pink)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.leading, 45)
-                            
+                            .padding(.leading, 36)
+                        
                         
                         VStack {
                             Text("Ketuk sekali ")
                                 .font(.system(size: 20))
                                 .fontWeight(.semibold)
-                                .foregroundColor(AppColor.blue)
+                                .foregroundColor(AppColor.pink)
                             
-                            + Text("untuk menghentikan\nsementara")
+                            + Text("lagi untuk melanjutkan")
                                 .font(.system(size: 20))
                                 .fontWeight(.medium)
-                            .foregroundColor(AppColor.blue)
+                                .foregroundColor(AppColor.pink)
                         }
                         .padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10))
                     }
@@ -76,7 +76,7 @@ struct OnboardingListeningView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity ,alignment: .topLeading)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(AppColor.pink)
+            .background(AppColor.red)
             .ignoresSafeArea()
         }
         .navigationBarBackButtonHidden(true)
@@ -84,5 +84,5 @@ struct OnboardingListeningView: View {
 }
 
 #Preview {
-    OnboardingListeningView(viewModel: OnboardingViewModel())
+    OnboardingPausedView(viewModel: OnboardingViewModel())
 }

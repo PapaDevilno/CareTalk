@@ -9,9 +9,7 @@ import SwiftUI
 
 struct OnboardingTutorialView: View {
     
-    @State private var isLongPressing = false
-    @State private var animationComplete = false
-    @State private var navigateToNextView = false
+    @ObservedObject var viewModel: OnboardingViewModel
     
     var body: some View {
         NavigationView {
@@ -40,7 +38,7 @@ struct OnboardingTutorialView: View {
                             .fontWeight(.semibold)
                             .foregroundColor(AppColor.pink)
                         
-                        + Text("di mana saja, agar aku bisa mulai mendengarkanmu")
+                         + Text("di mana saja, agar aku bisa mulai mendengarkanmu")
                             .font(.system(size: 22))
                             .fontWeight(.light)
                             .foregroundColor(.white)
@@ -51,15 +49,15 @@ struct OnboardingTutorialView: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity ,alignment: .topLeading)
                 
-                if animationComplete{
-                    NavigationLink(destination: OnboardingListeningView(), isActive: $navigateToNextView) {
+                if viewModel.animationComplete{
+                    NavigationLink(destination: OnboardingListeningView(viewModel: OnboardingViewModel()), isActive: $viewModel.navigateToNextView) {
                         EmptyView()
                     }
                 } else{
                     Circle()
                         .fill(AppColor.pink)
-                        .frame(width: isLongPressing ? 1000 : 100, height: isLongPressing ? 1000 : 100)
-                        .scaleEffect(isLongPressing ? 1 : 0.001)
+                        .frame(width: viewModel.isLongPressing ? 1000 : 100, height: viewModel.isLongPressing ? 1000 : 100)
+                        .scaleEffect(viewModel.isLongPressing ? 1 : 0.001)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -68,15 +66,15 @@ struct OnboardingTutorialView: View {
                     .onChanged { _ in
                         print("Long press started")
                         withAnimation(Animation.easeInOut(duration: 2.0)) {
-                            isLongPressing = true
+                            viewModel.isLongPressing = true
                         }
                     }
                     .onEnded { _ in
                         print("Long press end")
                         withAnimation {
-                            isLongPressing = false
-                            animationComplete = true
-                            navigateToNextView = true
+                            viewModel.isLongPressing = false
+                            viewModel.animationComplete = true
+                            viewModel.navigateToNextView = true
                         }
                         
                     }
@@ -87,5 +85,5 @@ struct OnboardingTutorialView: View {
 }
 
 #Preview {
-    OnboardingTutorialView()
+    OnboardingTutorialView(viewModel: OnboardingViewModel())
 }

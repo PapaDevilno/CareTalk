@@ -67,7 +67,7 @@ struct OnboardingView: View {
                             
                             VStack {
                                 NavigationLink{
-                                    OnboardingTutorialView()
+                                    OnboardingTutorialView(viewModel: OnboardingViewModel())
                                 } label: {
                                     RoundedButton(text: "Pelajari Lebih Lanjut")
                                 }
