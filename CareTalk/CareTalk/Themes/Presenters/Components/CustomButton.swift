@@ -18,7 +18,7 @@ struct RoundedButton: View {
                 .fontWeight(.bold)
                 .font(.system(size: 18))
                 .background(
-                    RoundedRectangle(cornerRadius: 25)
+                    RoundedRectangle(cornerRadius: 20)
                         .fill(.white)
                         .shadow(radius: 3)
                 )
