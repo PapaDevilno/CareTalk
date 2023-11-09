@@ -21,8 +21,8 @@ struct CongratulationsView: View {
                     Text(StringResources().congratulate)
                         .fontWeight(.bold)
                         .font(.title)
-                        .foregroundColor(.white)
-                        .padding(.bottom, 20)
+                        .foregroundColor(AppColor.pink)
+                        .padding(.bottom, 5)
                     
                     
                     VStack{
@@ -40,26 +40,38 @@ struct CongratulationsView: View {
                         .foregroundColor(.white)
                     
                     
-                    ForEach(0..<howToRecordViewModel.howToData.count, id: \.self) { index in
-                        VStack{
-                            HowToComponent(howToNum: howToRecordViewModel.getHowToNum(at: index), howToString: howToRecordViewModel.getHowToString(at: index))
-                            
+                    VStack(alignment: .leading){
+                        HStack{
+                            Text("1.").padding(.trailing, 28)
+                            Text(StringResources().firstHowTo)
                         }
-                    }
+                        HStack{
+                            Text("2.").padding(.trailing, 25)
+                            Text(StringResources().secondHowTo)
+                        }
+                        HStack{
+                            Text("3.").padding(.trailing, 25)
+                            Text(StringResources().thirdHowTo)
+                        }
+                        HStack{
+                            Text("4.").padding(.trailing, 25)
+                            Text(StringResources().fourthHowTo)
+                        }
+                        HStack{
+                            Text("5.").padding(.trailing, 25)
+                            Text(StringResources().fifthHowTo)
+                        }
+                    }.foregroundColor(.white)
                     
                 }
                 .frame(width: 300)
                 .padding(.top, 40)
-                .overlay{
-                    Rectangle().stroke()
-                }
+                
                 Spacer()
                 
                 VStack{
                     RoundedRectangleButton(text: StringResources().finish)
                         .padding(.bottom, 60)
-                }.overlay{
-                    Rectangle().stroke()
                 }
             }
         }

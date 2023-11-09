@@ -25,24 +25,34 @@ struct HowToRecordView: View {
                         .padding(.bottom, 20)
                     
                     //List{
-                        ForEach(0..<howToRecordViewModel.howToData.count, id: \.self) { index in
-                            VStack{
-                                HowToComponent(howToNum: howToRecordViewModel.getHowToNum(at: index), howToString: howToRecordViewModel.getHowToString(at: index))
-                                    
-                                
-                            }
-                            
-                            //.multilineTextAlignment(.leading)
+                    VStack(alignment: .leading){
+                        HStack{
+                            Text("1.").padding(.trailing, 28)
+                            Text(StringResources().firstHowTo)
                         }
+                        HStack{
+                            Text("2.").padding(.trailing, 25)
+                            Text(StringResources().secondHowTo)
+                        }
+                        HStack{
+                            Text("3.").padding(.trailing, 25)
+                            Text(StringResources().thirdHowTo)
+                        }
+                        HStack{
+                            Text("4.").padding(.trailing, 25)
+                            Text(StringResources().fourthHowTo)
+                        }
+                        HStack{
+                            Text("5.").padding(.trailing, 25)
+                            Text(StringResources().fifthHowTo)
+                        }
+                    }.foregroundColor(.white)
                     //}
                     
                 }
                 .frame(width: 300)
                 .padding(.top, 40)
-                .overlay{
-                    Rectangle().stroke()
-                }
-                Spacer()
+                                Spacer()
                 
                 VStack{
                     RoundedRectangleButton(text: StringResources().repeatTutorial)
@@ -50,9 +60,7 @@ struct HowToRecordView: View {
                     RoundedRectangleButton(text: StringResources().close)
                 }
                 .padding(.bottom, 90)
-                .overlay{
-                    Rectangle().stroke()
-                }
+                
             }
         }
     }

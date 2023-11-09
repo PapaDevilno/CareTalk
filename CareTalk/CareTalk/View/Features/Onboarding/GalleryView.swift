@@ -45,8 +45,8 @@ struct GalleryView: View {
                         Text(StringResources().galleryDesc_Third)
                             .foregroundColor(.white)
                         VStack{
-                            Text(StringResources().swipeRight)
-                            + Text(StringResources().galleryDesc_Fourth)
+                            Text(StringResources().swipeRight).foregroundColor(AppColor.pink)
+                            +  Text(StringResources().galleryDesc_Fourth)
 
                                 .foregroundColor(.white)
 
