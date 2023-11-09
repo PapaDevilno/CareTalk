@@ -20,6 +20,7 @@
 		6834C7AE2AF4B0350035077F /* OnboardingListeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6834C7AD2AF4B0350035077F /* OnboardingListeningView.swift */; };
 		684051332AF88ED700C7339B /* OnboardingPausedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684051322AF88ED700C7339B /* OnboardingPausedView.swift */; };
 		684051352AF896F000C7339B /* OnboardingStopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684051342AF896F000C7339B /* OnboardingStopView.swift */; };
+		685FADDB2AFCA4F800E63529 /* CongratsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685FADDA2AFCA4F800E63529 /* CongratsView.swift */; };
 		686040022AF214D100543524 /* YourViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686040012AF214D100543524 /* YourViewModel.swift */; };
 		686040042AF2150B00543524 /* YourModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686040032AF2150B00543524 /* YourModel.swift */; };
 		687985892AF9DED0008D8A71 /* StringResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687985882AF9DED0008D8A71 /* StringResources.swift */; };
@@ -61,6 +62,7 @@
 		6834C7AD2AF4B0350035077F /* OnboardingListeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingListeningView.swift; sourceTree = "<group>"; };
 		684051322AF88ED700C7339B /* OnboardingPausedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPausedView.swift; sourceTree = "<group>"; };
 		684051342AF896F000C7339B /* OnboardingStopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStopView.swift; sourceTree = "<group>"; };
+		685FADDA2AFCA4F800E63529 /* CongratsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratsView.swift; sourceTree = "<group>"; };
 		686040012AF214D100543524 /* YourViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourViewModel.swift; sourceTree = "<group>"; };
 		686040032AF2150B00543524 /* YourModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourModel.swift; sourceTree = "<group>"; };
 		687985882AF9DED0008D8A71 /* StringResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringResources.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				6834C7AD2AF4B0350035077F /* OnboardingListeningView.swift */,
 				684051322AF88ED700C7339B /* OnboardingPausedView.swift */,
 				684051342AF896F000C7339B /* OnboardingStopView.swift */,
+				685FADDA2AFCA4F800E63529 /* CongratsView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				687985942AF9DF1B008D8A71 /* InstructionButton.swift in Sources */,
 				68D6BD2F2AF33B930034533D /* OnboardingViewModel.swift in Sources */,
 				687985972AF9DF1B008D8A71 /* RoundedRectangleButton.swift in Sources */,
+				685FADDB2AFCA4F800E63529 /* CongratsView.swift in Sources */,
 				4D7085822AFC7ED000D27FC0 /* Recording.swift in Sources */,
 				687985932AF9DF1B008D8A71 /* HowToComponent.swift in Sources */,
 				680B4D802AE20FDE0047EDBA /* ContentView.swift in Sources */,
