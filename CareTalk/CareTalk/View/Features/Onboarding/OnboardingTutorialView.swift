@@ -14,38 +14,42 @@ struct OnboardingTutorialView: View {
     var body: some View {
         NavigationView {
             ZStack{
-                Color(AppColor.blue)
+                Color(AppColor.pink)
                     .ignoresSafeArea()
                 
                 VStack {
-                    VStack (alignment: .leading){
+                    VStack (alignment: .center){
                         Text("EVA menggunakan")
                             .font(.system(size: 28))
                             .fontWeight(.medium)
-                            .foregroundColor(.white)
+                            .foregroundColor(AppColor.pink)
                         
                         Text("suara")
                             .font(.system(size: 36))
                             .fontWeight(.bold)
                             .foregroundColor(AppColor.pink)
                     }
-                    .frame(maxWidth: .infinity, alignment: .topLeading)
-                    .padding(EdgeInsets(top: 50, leading: 25, bottom: 0, trailing: 0))
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding(EdgeInsets(top: 200, leading: 0, bottom: 0, trailing: 0))
+                    .background(CustomRoundedRectangle())
+                    
+                    Spacer()
                     
                     VStack {
-                        Text("Ketuk dan tahan selama 2 detik ")
-                            .font(.system(size: 22))
+                        Text("Tekan selama 2 detik ")
+                            .font(.system(size: 17))
                             .fontWeight(.semibold)
-                            .foregroundColor(AppColor.pink)
+                            .foregroundColor(AppColor.blue)
                         
                          + Text("di mana saja, agar aku bisa mulai mendengarkanmu")
-                            .font(.system(size: 22))
+                            .font(.system(size: 17))
                             .fontWeight(.light)
-                            .foregroundColor(.white)
+                            .foregroundColor(AppColor.blue)
                     }
-                    .padding(EdgeInsets(top: 25, leading: 25, bottom: 0, trailing: 25))
+                    .padding(EdgeInsets(top: 150, leading: 25, bottom: 0, trailing: 25))
                     
-                    
+                    Spacer()
+                
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity ,alignment: .topLeading)
                 
