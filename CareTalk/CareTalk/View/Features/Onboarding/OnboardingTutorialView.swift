@@ -31,7 +31,7 @@ struct OnboardingTutorialView: View {
                     }
                     .frame(maxWidth: .infinity, alignment: .center)
                     .padding(EdgeInsets(top: 200, leading: 0, bottom: 0, trailing: 0))
-                    .background(CustomRoundedRectangle())
+                    .background(CustomRoundedRectangle(viewModel: OnboardingViewModel()))
                     
                     Spacer()
                     
@@ -47,6 +47,7 @@ struct OnboardingTutorialView: View {
                             .foregroundColor(AppColor.blue)
                     }
                     .padding(EdgeInsets(top: 150, leading: 25, bottom: 0, trailing: 25))
+                    .frame(maxHeight: .infinity, alignment: .bottom)
                     
                     Spacer()
                 

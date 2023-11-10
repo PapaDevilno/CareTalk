@@ -27,11 +27,14 @@ struct RoundedButton: View {
 }
 
 struct CustomRoundedRectangle: View {
+    
+    @ObservedObject var viewModel: OnboardingViewModel
+    
     var body: some View {
         Rectangle()
             .frame(width: .infinity, height: 700)
             .cornerRadius(150, corners: [.bottomRight]) // Specify the corner you want to round
-            .foregroundColor(AppColor.blue)
+            .foregroundColor(viewModel.changeColor ? AppColor.red : AppColor.blue)
     }
 }
 
@@ -58,5 +61,5 @@ struct RoundedCorner: Shape {
 
 #Preview {
 //    RoundedButton(text: "Pelajari Lebih lanjut")
-    CustomRoundedRectangle()
+    CustomRoundedRectangle(viewModel: OnboardingViewModel())
 }

@@ -19,65 +19,87 @@ struct OnboardingListeningView: View {
                         Text("Ucapkan sesuatu...")
                             .font(.system(size: 20))
                             .fontWeight(.semibold)
-                            .foregroundColor(AppColor.blue)
+                            .foregroundColor(AppColor.pink)
                     }
                     .frame(maxWidth: .infinity, alignment: .center)
                     .padding(EdgeInsets(top: 100, leading: 0, bottom: 0, trailing: 0))
-                    
-                    if viewModel.animationComplete {
-                        NavigationLink(destination: OnboardingPausedView(viewModel: OnboardingViewModel()), isActive: $viewModel.navigateToNextView) {
-                            EmptyView()
-                        }
-                    } else {
-                        Button(action: {
-                            withAnimation(Animation.easeInOut(duration: 2.0)) {
-                                viewModel.isLongPressing = true
-                            }
-                            
-                            // Add any additional logic you need for the transition
-                            // For example, trigger the navigation to the next view
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                                viewModel.animationComplete = true
-                                viewModel.navigateToNextView = true
-                            }
-                        }) {
-                            Image("Pause_Button")
-                                .resizable()
-                                .frame(width: viewModel.isLongPressing ? 4000 : 100, height: viewModel.isLongPressing ? 4000 : 100)
-                                .scaledToFit()
-                        }
-                    }
+                    .background(CustomRoundedRectangle(viewModel: viewModel))
                     
                     VStack{
-                        Text("Aku sedang mendengarkanmu\nsekarang. Kamu dapat melihat \nkata-kata yang diterjemahkan di\nlayar ini")
-                            .font(.system(size:20))
-                            .fontWeight(.medium)
+                        Text("Aku sedang mendengarkanmu sekarang. Kamu dapat melihat kata-kata yang\nditerjemahkan di layar ini")
+                            .font(.system(size:17))
+                            .fontWeight(.light)
                             .foregroundColor(AppColor.blue)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.leading, 45)
+                            .padding(.leading, 40)
                             
                         
                         VStack {
-                            Text("Ketuk sekali ")
-                                .font(.system(size: 20))
+                            Text("Sentuh sekali ")
+                                .font(.system(size: 17))
                                 .fontWeight(.semibold)
                                 .foregroundColor(AppColor.blue)
                             
                             + Text("untuk menghentikan\nsementara")
-                                .font(.system(size: 20))
-                                .fontWeight(.medium)
+                                .font(.system(size: 17))
+                                .fontWeight(.light)
                             .foregroundColor(AppColor.blue)
                         }
-                        .padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10))
+                        .padding(EdgeInsets(top: 10, leading: 40, bottom: 0, trailing: 0))
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
                     .padding(.bottom, 70)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity ,alignment: .topLeading)
+                
+                if viewModel.animationComplete {
+                    withAnimation(.easeInOut(duration: 0.5)) {
+                        NavigationLink(destination: RecordingSavedView(), isActive: $viewModel.navigateToNextView) {
+                            EmptyView()
+                        }
+                    }
+                    .opacity(viewModel.animationComplete ? 0.0 : 1.0)
+                }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(AppColor.pink)
             .ignoresSafeArea()
+            .onTapGesture {
+                withAnimation {
+                    viewModel.changeColor.toggle()
+                }
+            }
+            .onTapGesture {
+                if !viewModel.changeColor {
+                    // When the color is not red, initiate a long-press gesture
+                    withAnimation(Animation.easeInOut(duration: 2.0)) {
+                        viewModel.isLongPressing = true
+                        viewModel.animationComplete = true
+                    }
+                }
+            }
+            .gesture(
+                LongPressGesture(minimumDuration: 2.0)
+                    .onChanged { _ in
+                        if !viewModel.changeColor { // Only enable long-press if not red
+                            withAnimation(Animation.easeInOut(duration: 2.0)) {
+                                viewModel.isLongPressing = true
+                                viewModel.animationComplete = true
+                            }
+                        }
+                    }
+                    .onEnded { _ in
+                        if !viewModel.changeColor { // Only navigate if not red
+                            withAnimation {
+                                viewModel.isLongPressing = false
+                                viewModel.animationComplete = true
+                                viewModel.navigateToNextView = true
+                            }
+                        }
+                    }
+            )
+            .opacity(viewModel.animationComplete ? 0.0 : 1.0)
         }
         .navigationBarBackButtonHidden(true)
     }
