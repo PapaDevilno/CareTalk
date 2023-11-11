@@ -10,13 +10,15 @@ import Foundation
 class GalleryViewModel: ObservableObject{
     
     @Published var galleryItems: [RecordingModel]
+    @Published var isExpanded: Bool = false
+    @Published var isClosed: Bool = false
     
     init() {
         galleryItems = [
-            RecordingModel(recordingName: "Recording 1", recordingDate: Date(), recordingTime_Hour: 0, recordingTime_Minute: 0, recordingTime_Second: 0, recordingDuration_Hour: 0, recordingDuration_Minute: 0, recordingDuration_Second: 0, recordingTranscribe: "Tolong buatkan teh hangat untuk Ayah ya nak Ayah haus"),
-            RecordingModel(recordingName: "Recording 2", recordingDate: Date(), recordingTime_Hour: 0, recordingTime_Minute: 0, recordingTime_Second: 0, recordingDuration_Hour: 0, recordingDuration_Minute: 0, recordingDuration_Second: 0,  recordingTranscribe: "Tolong buatkan teh hangat untuk Ayah ya nak Ayah haus"),
-            RecordingModel(recordingName: "Recording 3", recordingDate: Date(), recordingTime_Hour: 0, recordingTime_Minute: 0, recordingTime_Second: 0, recordingDuration_Hour: 0, recordingDuration_Minute: 0, recordingDuration_Second: 0,  recordingTranscribe: "Tolong buatkan teh hangat untuk Ayah ya nak Ayah haus"),
-            RecordingModel(recordingName: "Recording 4", recordingDate: Date(), recordingTime_Hour: 0, recordingTime_Minute: 0, recordingTime_Second: 0, recordingDuration_Hour: 0, recordingDuration_Minute: 0, recordingDuration_Second: 0,  recordingTranscribe: "Tolong buatkan teh hangat untuk Ayah ya nak Ayah haus"),
+            RecordingModel(recordingName: "Rekaman kamu 1", recordingDate: Date(), recordingTime_Hour: 0, recordingTime_Minute: 0, recordingTime_Second: 0, recordingDuration_Hour: 0, recordingDuration_Minute: 0, recordingDuration_Second: 0, recordingTranscribe: "Tolong buatkan teh hangat untuk Ayah ya nak Ayah haus kalau bisa gula nya jangan terlalu banyak kamu mengerti kan teh kesukaan ayah seperti apa Tolong buatkan teh hangat untuk Ayah ya nak Ayah haus kalau bisa gula nya jangan terlalu banyak kamu mengerti kan teh kesukaan ayah seperti apa"),
+            RecordingModel(recordingName: "Rekaman kamu 2", recordingDate: Date(), recordingTime_Hour: 0, recordingTime_Minute: 0, recordingTime_Second: 0, recordingDuration_Hour: 0, recordingDuration_Minute: 0, recordingDuration_Second: 0,  recordingTranscribe: "Tolong buatkan teh hangat untuk Ayah ya nak Ayah haus kalau bisa gula nya jangan terlalu banyak kamu mengerti kan teh kesukaan ayah seperti apa"),
+            RecordingModel(recordingName: "Rekaman kamu 3", recordingDate: Date(), recordingTime_Hour: 0, recordingTime_Minute: 0, recordingTime_Second: 0, recordingDuration_Hour: 0, recordingDuration_Minute: 0, recordingDuration_Second: 0,  recordingTranscribe: "Tolong buatkan teh hangat untuk Ayah ya nak Ayah haus kalau bisa gula nya jangan terlalu banyak kamu mengerti kan teh kesukaan ayah seperti apa"),
+            RecordingModel(recordingName: "Rekaman kamu 4", recordingDate: Date(), recordingTime_Hour: 0, recordingTime_Minute: 0, recordingTime_Second: 0, recordingDuration_Hour: 0, recordingDuration_Minute: 0, recordingDuration_Second: 0,  recordingTranscribe: "Tolong buatkan teh hangat untuk Ayah ya nak Ayah haus kalau bisa gula nya jangan terlalu banyak kamu mengerti kan teh kesukaan ayah seperti apa"),
             
         ]
     }

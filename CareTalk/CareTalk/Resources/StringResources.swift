@@ -21,7 +21,7 @@ struct StringResources {
     
     //OnBoarding - Gallery pt1 =================
     
-    let galleryTitle = "Galeri"
+    let galleryTitle = "Rekaman"
     let galleryCongratulateFirst = "Selamat!"
     let galleryCongratulate = "Kamu telah berhasil menggunakan "
     let seeGallery = "kamu dapat melihat galeri rekaman sebelumnya dengan cara "
@@ -30,11 +30,12 @@ struct StringResources {
     //OnBoarding - Gallery pt2
     
     let galleryDesc_First = "Berikut adalah hasil suara yang sudah direkam dan diinterpretasi sebelumnya"
-    let galleryDesc_Second = "Ketuk rekaman tersebut untuk menampilkan hasilnya"
-    
+    let galleryDesc_Second = "Ketuk 'Rekaman kamu' tersebut untuk menampilkan hasilnya"
+    let yourRecording = "Rekaman kamu"
+    let pressClose = "Ketuk 'Tutup' untuk menutup teks interpretasi"
     //OnBoarding - Gallery pt3
     
-    let galleryDesc_Third = "Lalu dapat memutar ulang audio yang direkam, membaca transkripsi, dan menghapus rekaman sebelumnya"
+    let galleryDesc_Third = "Kamu dapat memutar ulang audio yang direkam, membaca transkripsi, dan menghapus rekaman sebelumnya"
     let galleryDesc_Fourth = " untuk kembali ke layar interpretasi"
     let swipeRight = "Geser ke kanan"
     
