@@ -25,31 +25,60 @@ struct OnboardingListeningView: View {
                     .padding(EdgeInsets(top: 100, leading: 0, bottom: 0, trailing: 0))
                     .background(CustomRoundedRectangle(viewModel: viewModel))
                     
-                    VStack{
-                        Text("Aku sedang mendengarkanmu sekarang. Kamu dapat melihat kata-kata yang\nditerjemahkan di layar ini")
-                            .font(.system(size:17))
-                            .fontWeight(.light)
-                            .foregroundColor(AppColor.blue)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.leading, 40)
-                            
-                        
-                        VStack {
-                            Text("Sentuh sekali ")
-                                .font(.system(size: 17))
-                                .fontWeight(.semibold)
-                                .foregroundColor(AppColor.blue)
-                            
-                            + Text("untuk menghentikan\nsementara")
-                                .font(.system(size: 17))
+                    if !viewModel.changeColor {
+                        VStack{
+                            Text(viewModel.thirdState ? "Sekarang aku bisa mendengar kamu lagi!\nTeks interpretasi akan terus berlanjut" : "Aku sedang mendengarkanmu sekarang. Kamu dapat melihat kata-kata yang\nditerjemahkan di layar ini")
+                                .font(.system(size:17))
                                 .fontWeight(.light)
-                            .foregroundColor(AppColor.blue)
+                                .foregroundColor(AppColor.blue)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.leading, 40)
+                                
+                            
+                            VStack {
+                                Text(viewModel.thirdState ? "Tekan 2 detik " : "Sentuh sekali ")
+                                    .font(.system(size: 17))
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(AppColor.blue)
+                                
+                                + Text(viewModel.thirdState ? "untuk berhenti\nmendengarkan dan menyimpan suara\nyang direkam" : "untuk menghentikan\nsementara")
+                                    .font(.system(size: 17))
+                                    .fontWeight(.light)
+                                .foregroundColor(AppColor.blue)
+                            }
+                            .padding(EdgeInsets(top: 10, leading: 40, bottom: 0, trailing: 0))
+                            .frame(maxWidth: .infinity, alignment: .leading)
                         }
-                        .padding(EdgeInsets(top: 10, leading: 40, bottom: 0, trailing: 0))
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                        .padding(.bottom, 70)
+                    } else{
+                        VStack{
+                            Text("Saat ini aku sedang tidak mendengarkan\nsuaramu, namun semua interpretasi yang sudah\nada akan tetap ada")
+                                .font(.system(size:17))
+                                .fontWeight(.light)
+                                .foregroundColor(AppColor.blue)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.leading, 40)
+                            
+                            
+                            VStack {
+                                Text("Sentuh sekali ")
+                                    .font(.system(size: 17))
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(AppColor.blue)
+                                
+                                + Text("lagi untuk melanjutkan")
+                                    .font(.system(size: 17))
+                                    .fontWeight(.light)
+                                    .foregroundColor(AppColor.blue)
+                            }
+                            .padding(EdgeInsets(top: 10, leading: 40, bottom: 0, trailing: 0))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                        .padding(.bottom, 70)
+                        
                     }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-                    .padding(.bottom, 70)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity ,alignment: .topLeading)
                 
@@ -68,6 +97,7 @@ struct OnboardingListeningView: View {
             .onTapGesture {
                 withAnimation {
                     viewModel.changeColor.toggle()
+                    viewModel.thirdState = true
                 }
             }
             .onTapGesture {

@@ -15,6 +15,7 @@ class OnboardingViewModel: ObservableObject {
     @Published var isLongPressing = false
     @Published var animationComplete = false
     @Published var navigateToNextView = false
+    @Published var thirdState = false
     @Published var changeColor = false
 
     @Published var currentStage: OnboardingStage = .stage1

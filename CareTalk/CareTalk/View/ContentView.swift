@@ -11,7 +11,7 @@ struct ContentView: View {
     @StateObject var onboardingViewModel = OnboardingViewModel()
 
     var body: some View {
-        OnboardingView(viewModel: onboardingViewModel)
+        OnboardingOpeningScreen(viewModel: onboardingViewModel)
     }
 }
 
