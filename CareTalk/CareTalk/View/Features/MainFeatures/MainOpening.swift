@@ -10,6 +10,7 @@ import SwiftUI
 struct MainOpening: View {
     
     @ObservedObject var viewModel: OnboardingViewModel
+//    @ObservedObject var vm : VoiceViewModel
     
     var body: some View {
         NavigationView {
@@ -50,7 +51,7 @@ struct MainOpening: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity ,alignment: .topLeading)
                 
                 if viewModel.animationComplete{
-                    NavigationLink(destination: OnboardingListeningView(viewModel: OnboardingViewModel()), isActive: $viewModel.navigateToNextView) {
+                    NavigationLink(destination: MainListening(viewModel: OnboardingViewModel()), isActive: $viewModel.navigateToNextView) {
                         EmptyView()
                     }
                 } else{
@@ -75,6 +76,7 @@ struct MainOpening: View {
                             viewModel.isLongPressing = false
                             viewModel.animationComplete = true
                             viewModel.navigateToNextView = true
+//                            vm.startRecording()
                         }
                         
                     }

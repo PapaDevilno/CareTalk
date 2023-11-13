@@ -10,17 +10,24 @@ import SwiftUI
 struct MainListening: View {
     
     @ObservedObject var viewModel: OnboardingViewModel
+    @ObservedObject var vm = VoiceViewModel()
     
     var body: some View {
         NavigationView {
             ZStack{
                 VStack {
-                    
                     VStack{
-                        Text("Ucapkan sesuatu...")
-                            .font(.system(size: 20))
-                            .fontWeight(.semibold)
-                            .foregroundColor(AppColor.pink)
+                        if vm.outputText == "" {
+                            Text("Ucapkan sesuatu...")
+                                .font(.system(size: 20))
+                                .fontWeight(.semibold)
+                                .foregroundColor(AppColor.pink)
+                        } else {
+                            Text(vm.outputText)
+                                .font(.system(size: 20))
+                                .fontWeight(.semibold)
+                                .foregroundColor(AppColor.pink)
+                        }
                     }
                     .frame(maxWidth: .infinity, alignment: .center)
                     .padding(EdgeInsets(top: 100, leading: 0, bottom: 0, trailing: 0))
@@ -40,10 +47,12 @@ struct MainListening: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(AppColor.pink)
             .ignoresSafeArea()
+            .onAppear{
+                vm.startRecording()
+            }
             .onTapGesture {
                 withAnimation {
                     viewModel.changeColor.toggle()
-                    viewModel.thirdState = true
                 }
             }
             .onTapGesture {
@@ -71,6 +80,7 @@ struct MainListening: View {
                                 viewModel.isLongPressing = false
                                 viewModel.animationComplete = true
                                 viewModel.navigateToNextView = true
+                                vm.stopRecording()
                             }
                         }
                     }
@@ -78,6 +88,7 @@ struct MainListening: View {
             .opacity(viewModel.animationComplete ? 0.0 : 1.0)
         }
         .navigationBarBackButtonHidden(true)
+        
     }
 }
 

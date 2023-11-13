@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D0271F92B01D153008828E6 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0271F82B01D153008828E6 /* GalleryView.swift */; };
+		4D0271FB2B01D200008828E6 /* AudioStreamObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0271FA2B01D200008828E6 /* AudioStreamObserver.swift */; };
+		4D0271FD2B01D25F008828E6 /* ASR_(N+D)_BG.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4D0271FC2B01D25F008828E6 /* ASR_(N+D)_BG.mlmodel */; };
 		4D7085802AFC7EAE00D27FC0 /* VoiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D70857F2AFC7EAE00D27FC0 /* VoiceViewModel.swift */; };
 		4D7085822AFC7ED000D27FC0 /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7085812AFC7ED000D27FC0 /* Recording.swift */; };
 		4D7085842AFC84E200D27FC0 /* convertSectToMinAndHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7085832AFC84E200D27FC0 /* convertSectToMinAndHour.swift */; };
@@ -21,7 +24,6 @@
 		682DE95B2AFFD8050038773A /* RecordingDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682DE95A2AFFD8050038773A /* RecordingDetail.swift */; };
 		6834C7AC2AF485350035077F /* OnboardingTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6834C7AB2AF485350035077F /* OnboardingTutorialView.swift */; };
 		6834C7AE2AF4B0350035077F /* OnboardingListeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6834C7AD2AF4B0350035077F /* OnboardingListeningView.swift */; };
-		6843B8D52AFFD6B000CDC11C /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843B8D42AFFD6B000CDC11C /* GalleryView.swift */; };
 		685FADDB2AFCA4F800E63529 /* CongratsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685FADDA2AFCA4F800E63529 /* CongratsView.swift */; };
 		685FADDD2AFCAFA000E63529 /* OnboardingOpeningScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685FADDC2AFCAFA000E63529 /* OnboardingOpeningScreen.swift */; };
 		686040022AF214D100543524 /* YourViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686040012AF214D100543524 /* YourViewModel.swift */; };
@@ -49,6 +51,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D0271F82B01D153008828E6 /* GalleryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
+		4D0271FA2B01D200008828E6 /* AudioStreamObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStreamObserver.swift; sourceTree = "<group>"; };
+		4D0271FC2B01D25F008828E6 /* ASR_(N+D)_BG.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "ASR_(N+D)_BG.mlmodel"; sourceTree = "<group>"; };
 		4D70857F2AFC7EAE00D27FC0 /* VoiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceViewModel.swift; sourceTree = "<group>"; };
 		4D7085812AFC7ED000D27FC0 /* Recording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 		4D7085832AFC84E200D27FC0 /* convertSectToMinAndHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = convertSectToMinAndHour.swift; path = CareTalk/Model/convertSectToMinAndHour.swift; sourceTree = SOURCE_ROOT; };
@@ -64,7 +69,6 @@
 		682DE95A2AFFD8050038773A /* RecordingDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingDetail.swift; sourceTree = "<group>"; };
 		6834C7AB2AF485350035077F /* OnboardingTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTutorialView.swift; sourceTree = "<group>"; };
 		6834C7AD2AF4B0350035077F /* OnboardingListeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingListeningView.swift; sourceTree = "<group>"; };
-		6843B8D42AFFD6B000CDC11C /* GalleryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GalleryView.swift; path = "../../../../../../../../Downloads/CareTalk-main/CareTalk/CareTalk/View/Features/Onboarding/GalleryView.swift"; sourceTree = "<group>"; };
 		685FADDA2AFCA4F800E63529 /* CongratsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratsView.swift; sourceTree = "<group>"; };
 		685FADDC2AFCAFA000E63529 /* OnboardingOpeningScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingOpeningScreen.swift; sourceTree = "<group>"; };
 		686040012AF214D100543524 /* YourViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourViewModel.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 		680B4D7C2AE20FDE0047EDBA /* CareTalk */ = {
 			isa = PBXGroup;
 			children = (
+				4D0271FC2B01D25F008828E6 /* ASR_(N+D)_BG.mlmodel */,
 				68603FFA2AF213D900543524 /* Model */,
 				68603FFB2AF213E400543524 /* View */,
 				68603FFC2AF2140D00543524 /* ViewModel */,
@@ -166,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				686040012AF214D100543524 /* YourViewModel.swift */,
+				4D0271FA2B01D200008828E6 /* AudioStreamObserver.swift */,
 				4D70857F2AFC7EAE00D27FC0 /* VoiceViewModel.swift */,
 				68D6BD322AF34AC80034533D /* Features */,
 			);
@@ -228,9 +234,9 @@
 			isa = PBXGroup;
 			children = (
 				687985982AF9DF63008D8A71 /* CongratulationsView.swift */,
-				6843B8D42AFFD6B000CDC11C /* GalleryView.swift */,
 				6879859A2AF9DF63008D8A71 /* HowToRecordView.swift */,
 				6879859E2AF9DF6B008D8A71 /* RecordView.swift */,
+				4D0271F82B01D153008828E6 /* GalleryView.swift */,
 				6879859F2AF9DF6B008D8A71 /* TipsView.swift */,
 				685FADDC2AFCAFA000E63529 /* OnboardingOpeningScreen.swift */,
 				6834C7AB2AF485350035077F /* OnboardingTutorialView.swift */,
@@ -374,6 +380,8 @@
 				687985942AF9DF1B008D8A71 /* InstructionButton.swift in Sources */,
 				68D6BD2F2AF33B930034533D /* OnboardingViewModel.swift in Sources */,
 				687985972AF9DF1B008D8A71 /* RoundedRectangleButton.swift in Sources */,
+				4D0271FD2B01D25F008828E6 /* ASR_(N+D)_BG.mlmodel in Sources */,
+				4D0271F92B01D153008828E6 /* GalleryView.swift in Sources */,
 				685FADDB2AFCA4F800E63529 /* CongratsView.swift in Sources */,
 				4D7085822AFC7ED000D27FC0 /* Recording.swift in Sources */,
 				687985932AF9DF1B008D8A71 /* HowToComponent.swift in Sources */,
@@ -387,6 +395,7 @@
 				68C138E22B01BA60007489D0 /* NavBar.swift in Sources */,
 				686040042AF2150B00543524 /* YourModel.swift in Sources */,
 				6834C7AE2AF4B0350035077F /* OnboardingListeningView.swift in Sources */,
+				4D0271FB2B01D200008828E6 /* AudioStreamObserver.swift in Sources */,
 				687985AD2AF9DF8B008D8A71 /* CongratulationsViewModel.swift in Sources */,
 				687985A02AF9DF6B008D8A71 /* RecordView.swift in Sources */,
 				682DE9552AFFD7750038773A /* RecordingFile.swift in Sources */,
@@ -404,7 +413,6 @@
 				687CF3C02AFE117000026D0A /* RecordingSavedView.swift in Sources */,
 				6879859B2AF9DF63008D8A71 /* CongratulationsView.swift in Sources */,
 				682DE95B2AFFD8050038773A /* RecordingDetail.swift in Sources */,
-				6843B8D52AFFD6B000CDC11C /* GalleryView.swift in Sources */,
 				6879858D2AF9DEF3008D8A71 /* RecordingModel.swift in Sources */,
 				687985A82AF9DF83008D8A71 /* HowToRecordViewModel.swift in Sources */,
 			);
@@ -540,9 +548,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CareTalk/Preview Content\"";
-				DEVELOPMENT_TEAM = K685PAJ23Q;
+				DEVELOPMENT_TEAM = KGMG9ZB867;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = test;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -569,9 +578,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CareTalk/Preview Content\"";
-				DEVELOPMENT_TEAM = K685PAJ23Q;
+				DEVELOPMENT_TEAM = KGMG9ZB867;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = test;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

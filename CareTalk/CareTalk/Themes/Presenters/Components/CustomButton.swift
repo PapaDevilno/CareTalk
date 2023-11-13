@@ -32,7 +32,7 @@ struct CustomRoundedRectangle: View {
     
     var body: some View {
         Rectangle()
-            .frame(width: .infinity, height: 700)
+            .frame(width: 400, height: 700)
             .cornerRadius(150, corners: [.bottomRight]) // Specify the corner you want to round
             .foregroundColor(viewModel.changeColor ? AppColor.red : AppColor.blue)
     }
