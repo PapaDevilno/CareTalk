@@ -45,6 +45,7 @@
 		68C138DE2B013C54007489D0 /* MainOpening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C138DD2B013C54007489D0 /* MainOpening.swift */; };
 		68C138E02B01B65F007489D0 /* MainListening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C138DF2B01B65F007489D0 /* MainListening.swift */; };
 		68C138E22B01BA60007489D0 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C138E12B01BA60007489D0 /* NavBar.swift */; };
+		68C138E52B01FB6D007489D0 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C138E42B01FB6D007489D0 /* MainViewModel.swift */; };
 		68D6BD2F2AF33B930034533D /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D6BD2E2AF33B930034533D /* OnboardingViewModel.swift */; };
 		68D6BD382AF354F80034533D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D6BD372AF354F80034533D /* CustomButton.swift */; };
 		68D6BD3D2AF35D610034533D /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D6BD3C2AF35D610034533D /* AppColor.swift */; };
@@ -90,6 +91,7 @@
 		68C138DD2B013C54007489D0 /* MainOpening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainOpening.swift; sourceTree = "<group>"; };
 		68C138DF2B01B65F007489D0 /* MainListening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListening.swift; sourceTree = "<group>"; };
 		68C138E12B01BA60007489D0 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
+		68C138E42B01FB6D007489D0 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		68D6BD2E2AF33B930034533D /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		68D6BD372AF354F80034533D /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		68D6BD3C2AF35D610034533D /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
@@ -221,6 +223,14 @@
 			path = MainFeatures;
 			sourceTree = "<group>";
 		};
+		68C138E32B01FB5B007489D0 /* MainFeatures */ = {
+			isa = PBXGroup;
+			children = (
+				68C138E42B01FB6D007489D0 /* MainViewModel.swift */,
+			);
+			path = MainFeatures;
+			sourceTree = "<group>";
+		};
 		68D6BD302AF34AB10034533D /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +259,7 @@
 		68D6BD322AF34AC80034533D /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				68C138E32B01FB5B007489D0 /* MainFeatures */,
 				68D6BD332AF34ACE0034533D /* Onboarding */,
 			);
 			path = Features;
@@ -391,6 +402,7 @@
 				4D7085842AFC84E200D27FC0 /* convertSectToMinAndHour.swift in Sources */,
 				682DE9592AFFD7DC0038773A /* StringResources.swift in Sources */,
 				68C138E02B01B65F007489D0 /* MainListening.swift in Sources */,
+				68C138E52B01FB6D007489D0 /* MainViewModel.swift in Sources */,
 				6834C7AC2AF485350035077F /* OnboardingTutorialView.swift in Sources */,
 				68C138E22B01BA60007489D0 /* NavBar.swift in Sources */,
 				686040042AF2150B00543524 /* YourModel.swift in Sources */,
@@ -548,7 +560,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CareTalk/Preview Content\"";
-				DEVELOPMENT_TEAM = KGMG9ZB867;
+				DEVELOPMENT_TEAM = K685PAJ23Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = test;
@@ -578,7 +590,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CareTalk/Preview Content\"";
-				DEVELOPMENT_TEAM = KGMG9ZB867;
+				DEVELOPMENT_TEAM = K685PAJ23Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = test;

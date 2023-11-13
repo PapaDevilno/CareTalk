@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct RecordingSavedView: View {
+    
+    @ObservedObject var viewModel = MainViewModel()
+    
     var body: some View {
         NavigationView {
             ZStack{
@@ -34,6 +37,16 @@ struct RecordingSavedView: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .center)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                
+                if viewModel.isTapped{
+                    NavigationLink(destination: MainOpening(viewModel: OnboardingViewModel()), isActive: $viewModel.navigateToNextView) {
+                        EmptyView()
+                    }
+                }
+            }
+            .onTapGesture {
+                viewModel.isTapped = true
+                viewModel.navigateToNextView = true
             }
         }
         .navigationBarBackButtonHidden(true)
