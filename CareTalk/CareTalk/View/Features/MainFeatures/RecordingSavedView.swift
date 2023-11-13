@@ -15,6 +15,8 @@ struct RecordingSavedView: View {
                     .ignoresSafeArea()
                 
                 VStack (alignment: .center){
+                    Image("Saved")
+                    
                     Text("Berhasil")
                         .font(.system(size: 34))
                         .fontWeight(.bold)

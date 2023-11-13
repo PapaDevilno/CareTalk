@@ -21,8 +21,6 @@
 		682DE95B2AFFD8050038773A /* RecordingDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682DE95A2AFFD8050038773A /* RecordingDetail.swift */; };
 		6834C7AC2AF485350035077F /* OnboardingTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6834C7AB2AF485350035077F /* OnboardingTutorialView.swift */; };
 		6834C7AE2AF4B0350035077F /* OnboardingListeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6834C7AD2AF4B0350035077F /* OnboardingListeningView.swift */; };
-		684051332AF88ED700C7339B /* OnboardingPausedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684051322AF88ED700C7339B /* OnboardingPausedView.swift */; };
-		684051352AF896F000C7339B /* OnboardingStopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684051342AF896F000C7339B /* OnboardingStopView.swift */; };
 		6843B8D52AFFD6B000CDC11C /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6843B8D42AFFD6B000CDC11C /* GalleryView.swift */; };
 		685FADDB2AFCA4F800E63529 /* CongratsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685FADDA2AFCA4F800E63529 /* CongratsView.swift */; };
 		685FADDD2AFCAFA000E63529 /* OnboardingOpeningScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685FADDC2AFCAFA000E63529 /* OnboardingOpeningScreen.swift */; };
@@ -42,6 +40,9 @@
 		687985AB2AF9DF83008D8A71 /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687985A62AF9DF83008D8A71 /* RecordViewModel.swift */; };
 		687985AD2AF9DF8B008D8A71 /* CongratulationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687985AC2AF9DF8B008D8A71 /* CongratulationsViewModel.swift */; };
 		687CF3C02AFE117000026D0A /* RecordingSavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687CF3BF2AFE117000026D0A /* RecordingSavedView.swift */; };
+		68C138DE2B013C54007489D0 /* MainOpening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C138DD2B013C54007489D0 /* MainOpening.swift */; };
+		68C138E02B01B65F007489D0 /* MainListening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C138DF2B01B65F007489D0 /* MainListening.swift */; };
+		68C138E22B01BA60007489D0 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C138E12B01BA60007489D0 /* NavBar.swift */; };
 		68D6BD2F2AF33B930034533D /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D6BD2E2AF33B930034533D /* OnboardingViewModel.swift */; };
 		68D6BD382AF354F80034533D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D6BD372AF354F80034533D /* CustomButton.swift */; };
 		68D6BD3D2AF35D610034533D /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D6BD3C2AF35D610034533D /* AppColor.swift */; };
@@ -63,8 +64,6 @@
 		682DE95A2AFFD8050038773A /* RecordingDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingDetail.swift; sourceTree = "<group>"; };
 		6834C7AB2AF485350035077F /* OnboardingTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTutorialView.swift; sourceTree = "<group>"; };
 		6834C7AD2AF4B0350035077F /* OnboardingListeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingListeningView.swift; sourceTree = "<group>"; };
-		684051322AF88ED700C7339B /* OnboardingPausedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPausedView.swift; sourceTree = "<group>"; };
-		684051342AF896F000C7339B /* OnboardingStopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStopView.swift; sourceTree = "<group>"; };
 		6843B8D42AFFD6B000CDC11C /* GalleryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GalleryView.swift; path = "../../../../../../../../Downloads/CareTalk-main/CareTalk/CareTalk/View/Features/Onboarding/GalleryView.swift"; sourceTree = "<group>"; };
 		685FADDA2AFCA4F800E63529 /* CongratsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratsView.swift; sourceTree = "<group>"; };
 		685FADDC2AFCAFA000E63529 /* OnboardingOpeningScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingOpeningScreen.swift; sourceTree = "<group>"; };
@@ -84,6 +83,9 @@
 		687985A62AF9DF83008D8A71 /* RecordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewModel.swift; sourceTree = "<group>"; };
 		687985AC2AF9DF8B008D8A71 /* CongratulationsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongratulationsViewModel.swift; sourceTree = "<group>"; };
 		687CF3BF2AFE117000026D0A /* RecordingSavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingSavedView.swift; sourceTree = "<group>"; };
+		68C138DD2B013C54007489D0 /* MainOpening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainOpening.swift; sourceTree = "<group>"; };
+		68C138DF2B01B65F007489D0 /* MainListening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListening.swift; sourceTree = "<group>"; };
+		68C138E12B01BA60007489D0 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		68D6BD2E2AF33B930034533D /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		68D6BD372AF354F80034533D /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		68D6BD3C2AF35D610034533D /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
@@ -203,10 +205,21 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
+		68C138DC2B0136EC007489D0 /* MainFeatures */ = {
+			isa = PBXGroup;
+			children = (
+				68C138DD2B013C54007489D0 /* MainOpening.swift */,
+				68C138DF2B01B65F007489D0 /* MainListening.swift */,
+				687CF3BF2AFE117000026D0A /* RecordingSavedView.swift */,
+			);
+			path = MainFeatures;
+			sourceTree = "<group>";
+		};
 		68D6BD302AF34AB10034533D /* Features */ = {
 			isa = PBXGroup;
 			children = (
 				68D6BD312AF34AB70034533D /* Onboarding */,
+				68C138DC2B0136EC007489D0 /* MainFeatures */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -222,10 +235,7 @@
 				685FADDC2AFCAFA000E63529 /* OnboardingOpeningScreen.swift */,
 				6834C7AB2AF485350035077F /* OnboardingTutorialView.swift */,
 				6834C7AD2AF4B0350035077F /* OnboardingListeningView.swift */,
-				684051322AF88ED700C7339B /* OnboardingPausedView.swift */,
-				684051342AF896F000C7339B /* OnboardingStopView.swift */,
 				685FADDA2AFCA4F800E63529 /* CongratsView.swift */,
-				687CF3BF2AFE117000026D0A /* RecordingSavedView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -277,6 +287,7 @@
 				682DE95A2AFFD8050038773A /* RecordingDetail.swift */,
 				682DE9542AFFD7750038773A /* RecordingFile.swift */,
 				687985922AF9DF1B008D8A71 /* RoundedRectangleButton.swift */,
+				68C138E12B01BA60007489D0 /* NavBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -360,7 +371,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				686040022AF214D100543524 /* YourViewModel.swift in Sources */,
-				684051332AF88ED700C7339B /* OnboardingPausedView.swift in Sources */,
 				687985942AF9DF1B008D8A71 /* InstructionButton.swift in Sources */,
 				68D6BD2F2AF33B930034533D /* OnboardingViewModel.swift in Sources */,
 				687985972AF9DF1B008D8A71 /* RoundedRectangleButton.swift in Sources */,
@@ -368,10 +378,13 @@
 				4D7085822AFC7ED000D27FC0 /* Recording.swift in Sources */,
 				687985932AF9DF1B008D8A71 /* HowToComponent.swift in Sources */,
 				680B4D802AE20FDE0047EDBA /* ContentView.swift in Sources */,
+				68C138DE2B013C54007489D0 /* MainOpening.swift in Sources */,
 				685FADDD2AFCAFA000E63529 /* OnboardingOpeningScreen.swift in Sources */,
 				4D7085842AFC84E200D27FC0 /* convertSectToMinAndHour.swift in Sources */,
 				682DE9592AFFD7DC0038773A /* StringResources.swift in Sources */,
+				68C138E02B01B65F007489D0 /* MainListening.swift in Sources */,
 				6834C7AC2AF485350035077F /* OnboardingTutorialView.swift in Sources */,
+				68C138E22B01BA60007489D0 /* NavBar.swift in Sources */,
 				686040042AF2150B00543524 /* YourModel.swift in Sources */,
 				6834C7AE2AF4B0350035077F /* OnboardingListeningView.swift in Sources */,
 				687985AD2AF9DF8B008D8A71 /* CongratulationsViewModel.swift in Sources */,
@@ -389,7 +402,6 @@
 				68D6BD3D2AF35D610034533D /* AppColor.swift in Sources */,
 				687985AB2AF9DF83008D8A71 /* RecordViewModel.swift in Sources */,
 				687CF3C02AFE117000026D0A /* RecordingSavedView.swift in Sources */,
-				684051352AF896F000C7339B /* OnboardingStopView.swift in Sources */,
 				6879859B2AF9DF63008D8A71 /* CongratulationsView.swift in Sources */,
 				682DE95B2AFFD8050038773A /* RecordingDetail.swift in Sources */,
 				6843B8D52AFFD6B000CDC11C /* GalleryView.swift in Sources */,

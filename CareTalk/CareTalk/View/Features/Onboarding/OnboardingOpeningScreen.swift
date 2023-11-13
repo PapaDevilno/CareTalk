@@ -19,7 +19,7 @@ struct OnboardingOpeningScreen: View {
                 
                 if viewModel.showLogo {
                     VStack {
-                        Image("CareTalk_Logo")
+                        Image("AppLogo")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 100)
