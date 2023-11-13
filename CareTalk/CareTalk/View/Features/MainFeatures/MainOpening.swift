@@ -19,21 +19,13 @@ struct MainOpening: View {
                 
                 VStack {
                     
-                    VStack (alignment: .center){
+                    VStack (alignment: .leading){
+                        
                         NavBar()
                         
-                        Text("EVA menggunakan")
-                            .font(.system(size: 28))
-                            .fontWeight(.medium)
-                            .foregroundColor(AppColor.pink)
                         
-                        Text("suara")
-                            .font(.system(size: 36))
-                            .fontWeight(.bold)
-                            .foregroundColor(AppColor.pink)
                     }
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .padding(EdgeInsets(top: 200, leading: 0, bottom: 0, trailing: 0))
+                    .frame(maxWidth: .infinity, alignment: .topLeading)
                     .background(CustomRoundedRectangle(viewModel: OnboardingViewModel()))
                     
                     Spacer()

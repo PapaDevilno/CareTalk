@@ -10,6 +10,7 @@ import SwiftUI
 struct NavBar: View {
     var body: some View {
         ZStack(alignment: .leading) {
+            
             HStack{
                 NavigationLink {
                 
@@ -29,7 +30,7 @@ struct NavBar: View {
 //            Rectangle()
 //                .fill(AppColor.blue)
 ////                .shadow(radius: 3)
-//                .frame(width: UIScreen.main.bounds.width)
+                .frame(width: UIScreen.main.bounds.width)
 //        )
     }
 }
@@ -41,8 +42,8 @@ struct IconNavBar: View{
             Image(image)
                 .resizable()
                 .scaledToFit()
-                .frame(height: 30)
-            .padding(.horizontal, 80)
+                .frame(width:30 , height: 30)
+            .padding(.horizontal, 120)
         }
 //        .padding(.top, 20)
     }

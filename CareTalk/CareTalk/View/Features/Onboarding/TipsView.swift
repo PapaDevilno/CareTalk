@@ -18,7 +18,7 @@ struct TipsView: View {
                     Text(StringResources().tips)
                         .fontWeight(.bold)
                         .font(.title)
-                        .foregroundColor(.white)
+                        .foregroundColor(AppColor.pink)
                         .padding(.bottom, 20)
                     Text("\(StringResources().tipsDesc)")
                         .foregroundColor(.white)
