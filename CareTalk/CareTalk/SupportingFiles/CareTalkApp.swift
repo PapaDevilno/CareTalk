@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct CareTalkApp: App {
+    
+    @StateObject var userSettings = UserSettings()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if userSettings.hasCompletedOnboarding {
+                OnboardingOpeningScreen(viewModel: OnboardingViewModel())
+            } else {
+                ContentView()
+            }
         }
     }
 }
