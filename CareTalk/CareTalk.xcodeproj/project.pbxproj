@@ -39,10 +39,10 @@
 		687985A12AF9DF6B008D8A71 /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6879859F2AF9DF6B008D8A71 /* TipsView.swift */; };
 		687985A82AF9DF83008D8A71 /* HowToRecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687985A32AF9DF83008D8A71 /* HowToRecordViewModel.swift */; };
 		687985AA2AF9DF83008D8A71 /* TipsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687985A52AF9DF83008D8A71 /* TipsViewModel.swift */; };
-		687985AB2AF9DF83008D8A71 /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687985A62AF9DF83008D8A71 /* RecordViewModel.swift */; };
 		687985AD2AF9DF8B008D8A71 /* CongratulationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687985AC2AF9DF8B008D8A71 /* CongratulationsViewModel.swift */; };
 		687CF3C02AFE117000026D0A /* RecordingSavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687CF3BF2AFE117000026D0A /* RecordingSavedView.swift */; };
 		68A8535F2B030E3500B0BD83 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A8535E2B030E3500B0BD83 /* UserSettings.swift */; };
+		68A853612B0494A400B0BD83 /* RecordingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A853602B0494A400B0BD83 /* RecordingListView.swift */; };
 		68C138DE2B013C54007489D0 /* MainOpening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C138DD2B013C54007489D0 /* MainOpening.swift */; };
 		68C138E02B01B65F007489D0 /* MainListening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C138DF2B01B65F007489D0 /* MainListening.swift */; };
 		68C138E22B01BA60007489D0 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C138E12B01BA60007489D0 /* NavBar.swift */; };
@@ -86,10 +86,10 @@
 		6879859F2AF9DF6B008D8A71 /* TipsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
 		687985A32AF9DF83008D8A71 /* HowToRecordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToRecordViewModel.swift; sourceTree = "<group>"; };
 		687985A52AF9DF83008D8A71 /* TipsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsViewModel.swift; sourceTree = "<group>"; };
-		687985A62AF9DF83008D8A71 /* RecordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewModel.swift; sourceTree = "<group>"; };
 		687985AC2AF9DF8B008D8A71 /* CongratulationsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongratulationsViewModel.swift; sourceTree = "<group>"; };
 		687CF3BF2AFE117000026D0A /* RecordingSavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingSavedView.swift; sourceTree = "<group>"; };
 		68A8535E2B030E3500B0BD83 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		68A853602B0494A400B0BD83 /* RecordingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingListView.swift; sourceTree = "<group>"; };
 		68C138DD2B013C54007489D0 /* MainOpening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainOpening.swift; sourceTree = "<group>"; };
 		68C138DF2B01B65F007489D0 /* MainListening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListening.swift; sourceTree = "<group>"; };
 		68C138E12B01BA60007489D0 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
@@ -221,6 +221,7 @@
 				68C138DD2B013C54007489D0 /* MainOpening.swift */,
 				68C138DF2B01B65F007489D0 /* MainListening.swift */,
 				687CF3BF2AFE117000026D0A /* RecordingSavedView.swift */,
+				68A853602B0494A400B0BD83 /* RecordingListView.swift */,
 			);
 			path = MainFeatures;
 			sourceTree = "<group>";
@@ -274,7 +275,6 @@
 				687985AC2AF9DF8B008D8A71 /* CongratulationsViewModel.swift */,
 				682DE9562AFFD7B40038773A /* GalleryViewModel.swift */,
 				687985A32AF9DF83008D8A71 /* HowToRecordViewModel.swift */,
-				687985A62AF9DF83008D8A71 /* RecordViewModel.swift */,
 				687985A52AF9DF83008D8A71 /* TipsViewModel.swift */,
 				68D6BD2E2AF33B930034533D /* OnboardingViewModel.swift */,
 			);
@@ -418,6 +418,7 @@
 				682DE9572AFFD7B40038773A /* GalleryViewModel.swift in Sources */,
 				68D6BD382AF354F80034533D /* CustomButton.swift in Sources */,
 				687985A12AF9DF6B008D8A71 /* TipsView.swift in Sources */,
+				68A853612B0494A400B0BD83 /* RecordingListView.swift in Sources */,
 				4D7085802AFC7EAE00D27FC0 /* VoiceViewModel.swift in Sources */,
 				687985AA2AF9DF83008D8A71 /* TipsViewModel.swift in Sources */,
 				4D7085862AFC850200D27FC0 /* Date.swift in Sources */,
@@ -425,7 +426,6 @@
 				6879858B2AF9DEEE008D8A71 /* HowToModel.swift in Sources */,
 				6879859D2AF9DF63008D8A71 /* HowToRecordView.swift in Sources */,
 				68D6BD3D2AF35D610034533D /* AppColor.swift in Sources */,
-				687985AB2AF9DF83008D8A71 /* RecordViewModel.swift in Sources */,
 				687CF3C02AFE117000026D0A /* RecordingSavedView.swift in Sources */,
 				6879859B2AF9DF63008D8A71 /* CongratulationsView.swift in Sources */,
 				682DE95B2AFFD8050038773A /* RecordingDetail.swift in Sources */,

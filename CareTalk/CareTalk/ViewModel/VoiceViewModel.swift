@@ -26,6 +26,7 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
     @Published var outputText:String = "";
     
     @Published var isRecording : Bool = false
+    @Published var isExpanded : Bool = false
     
     @Published var recordingsList = [Recording]()
     @Published var textList = [TranscriptionText]()

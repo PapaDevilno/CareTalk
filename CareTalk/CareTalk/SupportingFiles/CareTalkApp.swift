@@ -11,6 +11,7 @@ import SwiftUI
 struct CareTalkApp: App {
     
     @StateObject var userSettings = UserSettings()
+    @ObservedObject var vm = VoiceViewModel()
     
     var body: some Scene {
         WindowGroup {
@@ -18,6 +19,7 @@ struct CareTalkApp: App {
                 OnboardingOpeningScreen(viewModel: OnboardingViewModel())
             } else {
                 ContentView()
+                    .environmentObject(vm)
             }
         }
     }

@@ -18,7 +18,7 @@ struct NavBar: View {
                     IconNavBar(image: "Tutorial_Button")
                 }
                 NavigationLink {
-                    
+                    RecordingListView()
                 }label: {
                     IconNavBar(image: "Recording_Button")
                 }

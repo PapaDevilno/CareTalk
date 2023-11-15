@@ -34,20 +34,26 @@ struct RecordingSavedView: View {
                         .font(.system(size: 25))
                         .fontWeight(.light)
                         .foregroundColor(.white)
+                    
+                    NavigationLink {
+                        MainOpening(viewModel: OnboardingViewModel())
+                    } label: {
+                        RoundedButton(text: "Next")
+                    }
                 }
                 .frame(maxWidth: .infinity, alignment: .center)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                 
-                if viewModel.isTapped{
-                    NavigationLink(destination: MainOpening(viewModel: OnboardingViewModel()), isActive: $viewModel.navigateToNextView) {
-                        EmptyView()
-                    }
-                }
+//                if viewModel.isTapped{
+//                    NavigationLink(destination: MainOpening(viewModel: OnboardingViewModel()), isActive: $viewModel.navigateToNextView) {
+//                        EmptyView()
+//                    }
+//                }
             }
-            .onTapGesture {
-                viewModel.isTapped = true
-                viewModel.navigateToNextView = true
-            }
+//            .onTapGesture {
+//                viewModel.isTapped = true
+//                viewModel.navigateToNextView = true
+//            }
         }
         .navigationBarBackButtonHidden(true)
     }

@@ -10,7 +10,7 @@ import SwiftUI
 struct MainOpening: View {
     
     @ObservedObject var viewModel: OnboardingViewModel
-//    @ObservedObject var vm : VoiceViewModel
+//    @ObservedObject var vm = VoiceViewModel()
     
     var body: some View {
         NavigationView {
@@ -47,40 +47,45 @@ struct MainOpening: View {
                     
                     Spacer()
                     
+                    NavigationLink {
+                        MainListening(viewModel: OnboardingViewModel())
+                    } label: {
+                        RoundedButton(text: "Next")
+                    }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity ,alignment: .topLeading)
                 
-                if viewModel.animationComplete{
-                    NavigationLink(destination: MainListening(viewModel: OnboardingViewModel()), isActive: $viewModel.navigateToNextView) {
-                        EmptyView()
-                    }
-                } else{
-                    Circle()
-                        .fill(AppColor.pink)
-                        .frame(width: viewModel.isLongPressing ? 1000 : 100, height: viewModel.isLongPressing ? 1000 : 100)
-                        .scaleEffect(viewModel.isLongPressing ? 1 : 0.001)
-                }
+//                if viewModel.animationComplete{
+//                    NavigationLink(destination: MainListening(viewModel: OnboardingViewModel()), isActive: $viewModel.navigateToNextView) {
+//                        EmptyView()
+//                    }
+//                } else{
+//                    Circle()
+//                        .fill(AppColor.pink)
+//                        .frame(width: viewModel.isLongPressing ? 1000 : 100, height: viewModel.isLongPressing ? 1000 : 100)
+//                        .scaleEffect(viewModel.isLongPressing ? 1 : 0.001)
+//                }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .gesture(
-                LongPressGesture(minimumDuration: 2.0)
-                    .onChanged { _ in
-                        print("Long press started")
-                        withAnimation(Animation.easeInOut(duration: 2.0)) {
-                            viewModel.isLongPressing = true
-                        }
-                    }
-                    .onEnded { _ in
-                        print("Long press end")
-                        withAnimation {
-                            viewModel.isLongPressing = false
-                            viewModel.animationComplete = true
-                            viewModel.navigateToNextView = true
-//                            vm.startRecording()
-                        }
-                        
-                    }
-            )
+//            .gesture(
+//                LongPressGesture(minimumDuration: 2.0)
+//                    .onChanged { _ in
+//                        print("Long press started")
+//                        withAnimation(Animation.easeInOut(duration: 2.0)) {
+//                            viewModel.isLongPressing = true
+//                        }
+//                    }
+//                    .onEnded { _ in
+//                        print("Long press end")
+//                        withAnimation {
+//                            viewModel.isLongPressing = false
+//                            viewModel.animationComplete = true
+//                            viewModel.navigateToNextView = true
+////                            vm.startRecording()
+//                        }
+//                        
+//                    }
+//            )
         }
         .navigationBarBackButtonHidden(true)
     }

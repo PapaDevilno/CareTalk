@@ -11,10 +11,13 @@ struct RecordingFile: View {
     
     //var recordingModel: RecordingModel
     
-    @ObservedObject var galleryViewModel : GalleryViewModel
-    @Binding var count: Int
+//    @ObservedObject var galleryViewModel : GalleryViewModel
+//    @Binding var count: Int
+    @EnvironmentObject var vm : VoiceViewModel
     
-    var index: Int
+    var recording : Recording
+    var text: TranscriptionText
+//    var index: Int
     //    var recordingName: String
     //    var recordingDate: Date  //harusnya Date
     //    var recordingTime_Hour: Int
@@ -40,8 +43,9 @@ struct RecordingFile: View {
             
             
             
-            if galleryViewModel.isExpanded{
-                RecordingDetail(recordingDetail: galleryViewModel.getRecordingTranscribtion(at: index), galleryViewModel: galleryViewModel, count: $count)
+            if vm.isExpanded{
+                RecordingDetail(recording: recording, text: text)
+                    .environmentObject(vm)
                     .frame(width: containerWidth, height: 225)
                     .padding(.top, 40)
                     .zIndex(-1)
@@ -51,42 +55,42 @@ struct RecordingFile: View {
             }
             
             
-            VStack(alignment: .leading){
-                HStack{
-                    Text(galleryViewModel.getRecordingName(at: index))
-                        .font(.headline)
-                        .bold()
-                        .fontWeight(.medium)
-                        .padding(.leading, 20)
-                    Spacer()
-                    Text(String(galleryViewModel.getRecordingDurationHours(at: index)))
-                        .font(.headline)
-                        .bold()
-                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                        .padding(.trailing, 20)
-                }
-                .frame(width: containerWidth)
-                .padding(.top, 20)
-                
-                HStack{
-                    Text("\(galleryViewModel.getRecordingDate(at: index))")
-                        .font(.footnote)
-                    //Spacer()
-                }
-                .frame(width: containerWidth/2)
-                .padding(.leading, 20)
-                
-            }
+//            VStack(alignment: .leading){
+//                HStack{
+//                    Text(galleryViewModel.getRecordingName(at: index))
+//                        .font(.headline)
+//                        .bold()
+//                        .fontWeight(.medium)
+//                        .padding(.leading, 20)
+//                    Spacer()
+//                    Text(String(galleryViewModel.getRecordingDurationHours(at: index)))
+//                        .font(.headline)
+//                        .bold()
+//                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+//                        .padding(.trailing, 20)
+//                }
+//                .frame(width: containerWidth)
+//                .padding(.top, 20)
+//
+//                HStack{
+//                    Text("\(galleryViewModel.getRecordingDate(at: index))")
+//                        .font(.footnote)
+//                    //Spacer()
+//                }
+//                .frame(width: containerWidth/2)
+//                .padding(.leading, 20)
+//
+//            }
             
         }
         .onTapGesture {
             withAnimation {
-                galleryViewModel.isExpanded.toggle()
+                vm.isExpanded.toggle()
             }
             
-            if count < 3 {
-                count += 1
-            }
+//            if count < 3 {
+//                count += 1
+//            }
             
         }
     }
@@ -97,9 +101,9 @@ struct RecordingFile: View {
 //    RecordingFile(recordingName: "Recording 1", count: <#Binding<Int>#>, recordingDate: Date(), recordingTime_Hour: 0, recordingTime_Minute: 0, recordingTime_Second: 0, recordingDuration_Hour: 0, recordingDuration_Minute: 0, recordingDuration_Second: 0, recordingTranscribe: "Transcription")
 //}
 
-struct RecordingFile_Previews: PreviewProvider {
-    static var previews: some View {
-        RecordingFile(galleryViewModel: GalleryViewModel(), count: .constant(0), index: 0)
-            //.previewLayout(.fixed(width: 375, height: 100)) // Adjust the preview layout size accordingly
-    }
-}
+//struct RecordingFile_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RecordingFile(galleryViewModel: GalleryViewModel(), count: .constant(0), index: 0)
+//            //.previewLayout(.fixed(width: 375, height: 100)) // Adjust the preview layout size accordingly
+//    }
+//}
