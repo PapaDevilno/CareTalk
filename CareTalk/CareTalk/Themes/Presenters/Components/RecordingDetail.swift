@@ -33,7 +33,6 @@ struct RecordingDetail: View {
                     RoundedRectangle(cornerRadius: 0)
                         .fill(Color.white)
                     ScrollView{
-                        
                        
                         Text(text.transcription ?? "no text")
                             .font(.headline)
@@ -47,6 +46,7 @@ struct RecordingDetail: View {
                     .padding(.top, 40)
                     //.frame(maxHeight: min(geometry.size.height, .infinity))
                 }
+                
                 
                 Button(action: {
                     if recording.isPlaying == true {

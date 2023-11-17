@@ -13,13 +13,17 @@ struct Recording : Equatable, Hashable {
     var isPlaying : Bool
     var selectedTime : TimeInterval?
     var transcription: String? // Property to store the transcription text
-    init(fileURL: URL, createdAt: Date, isPlaying: Bool, selectedTime: TimeInterval?, transcription: String) {
-            self.fileURL = fileURL
-            self.createdAt = createdAt
-            self.isPlaying = isPlaying
-            self.selectedTime = selectedTime
-            self.transcription = transcription
-        }
+    var duration : String?
+    var name : Int?
+    init(fileURL: URL, createdAt: Date, isPlaying: Bool, selectedTime: TimeInterval?, transcription: String, duration: String?, name: Int?) {
+        self.fileURL = fileURL
+        self.createdAt = createdAt
+        self.isPlaying = isPlaying
+        self.selectedTime = selectedTime
+        self.transcription = transcription
+        self.duration = duration
+        self.name = name
+    }
 }
 
 struct TranscriptionText : Equatable, Hashable {

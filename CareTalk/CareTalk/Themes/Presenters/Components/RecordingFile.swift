@@ -31,7 +31,7 @@ struct RecordingFile: View {
     var containerWidth: Double = 350.0
     var containerHeight: Double = 80.0
     
-    @State private var thisBool: Bool = false
+//    @State private var thisBool: Bool = false
     //@State var isExpanded = false
     
     var body: some View {
@@ -49,13 +49,17 @@ struct RecordingFile: View {
                     .frame(width: containerWidth, height: 225)
                     .padding(.top, 40)
                     .zIndex(-1)
-                
-                
-                
             }
             
             
-//            VStack(alignment: .leading){
+            VStack(alignment: .leading){
+//                Text("\(text.fileURL.lastPathComponent)")
+//                Text("Date: \(vm.extractDateFunction(from: text.fileURL.lastPathComponent).extractedDate)")
+//                Text("Time: \(vm.extractDateFunction(from: text.fileURL.lastPathComponent).extractedTime)")
+                Text("Recording " + String(recording.name ?? 0))
+                Text("Date: \(vm.extractDateAndTime(from: text.fileURL.lastPathComponent)!.extractedDate)")
+                Text("Time: \(vm.extractDateAndTime(from: text.fileURL.lastPathComponent)!.extractedTime)")
+                Text("Duration: \(recording.duration ?? "saved timer error")")
 //                HStack{
 //                    Text(galleryViewModel.getRecordingName(at: index))
 //                        .font(.headline)
@@ -79,8 +83,8 @@ struct RecordingFile: View {
 //                }
 //                .frame(width: containerWidth/2)
 //                .padding(.leading, 20)
-//
-//            }
+
+            }
             
         }
         .onTapGesture {

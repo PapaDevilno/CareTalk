@@ -24,6 +24,7 @@ struct RecordingListView: View {
                     .foregroundColor(.white)
                     .padding(.bottom, 20)
                 VStack{
+                    ScrollView (showsIndicators: false) {
                     ForEach(Array(vm.textRecordingList), id: \.key) { key, value in
                         
                         VStack{
@@ -35,22 +36,23 @@ struct RecordingListView: View {
                                 
                                 //PERLU DICEK DISINI BNR GA GTU URUTANNYA
                                 Button(action: {
-                                   selectedText = key
+                                    selectedText = key
                                     selectedValue = value
                                     vm.textRecordingList.removeValue(forKey: key)
                                     vm.deleteRecording(url: selectedValue?.fileURL ?? value.fileURL)
                                     vm.deleteText(url: selectedText?.fileURL ?? key.fileURL)
-
+                                    
                                 }) {
                                     Image(systemName: "xmark.circle.fill")
                                         .foregroundColor(.black)
                                         .font(.system(size: 15))
-                            }
+                                }
                             }
                         }
                         //.frame(height: .infinity)
                         .padding(.bottom, 10)
                     }
+                }
                 }
                 
             }

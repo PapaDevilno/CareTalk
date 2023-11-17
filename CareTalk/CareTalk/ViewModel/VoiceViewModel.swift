@@ -5,6 +5,13 @@
 //  Created by Felix Natanael on 09/11/23.
 //
 
+//
+//  VoiceViewModel.swift
+//  CareTalk
+//
+//  Created by Felix Natanael on 09/11/23.
+//
+
 import Foundation
 import AVFoundation
 //import Speech
@@ -38,6 +45,9 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
     @Published var timer : String = "0:00"
     @Published var toggleColor : Bool = false
     @Published var currentPlaybackTime: TimeInterval = 0
+    @Published var duration: TimeInterval?
+    @Published var savedTimer : String?
+    @Published var recordingNumber : Int = 0
     
     @Published var old_contents: [URL] = []
     @Published var new_contents: [URL] = []
@@ -75,7 +85,7 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
         
         let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let fileName = path.appendingPathComponent("CO-Voice : \(Date().toString(dateFormat: "dd-MM-YY 'at' HH:mm:ss")).m4a")
-        let fileTextName = path.appendingPathComponent("CO-Voice : \(Date().toString(dateFormat: "dd-MM-YY 'at' HH:mm:ss")).txt")
+        let fileTextName = path.appendingPathComponent("Recording : \(Date().toString(dateFormat: "dd-MM-YY 'at' HH:mm:ss")).txt")
         
         
         do {
@@ -173,7 +183,6 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
                 
             })
             
-            
             blinkColor()
             
             
@@ -226,7 +235,8 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
     
     func stopRecording(){
 //        var stop_time = Date().toString(dateFormat: "dd-MM-YY 'at' HH:mm:ss")
-        
+//        duration = audioPlayer.currentTime
+        self.savedTimer = self.timer
         audioRecorder.stop()
         audioEngine.stop()
 //        recognitionRequest?.endAudio()
@@ -239,6 +249,8 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
         // HAVEN'T CHECKED THIS ONE YET
         timerCount!.invalidate()
         
+        recordingNumber += 1
+
         if self.outputText.count != 0 {
             self.outputText = ""
             observer.currentSound = ""
@@ -264,13 +276,13 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
         
         if directoryContents.count <= 2 {
             if directoryContents[0].pathExtension == "m4a" && directoryContents[1].pathExtension == "txt" {
-                let recording = Recording(fileURL: directoryContents[0], createdAt: getFileDate(for: directoryContents[0]), isPlaying: false, selectedTime: nil, transcription: "")
+                let recording = Recording(fileURL: directoryContents[0], createdAt: getFileDate(for: directoryContents[0]), isPlaying: false, selectedTime: nil, transcription: "", duration: savedTimer, name: recordingNumber)
                 let text = TranscriptionText(fileURL: directoryContents[1], createdAt: getFileDate(for: directoryContents[1]), isPlaying: false, transcription: getFileText(for: directoryContents[1]) ?? "")
                 textRecordingList[text] = recording
             }
             
             if directoryContents[1].pathExtension == "m4a" && directoryContents[0].pathExtension == "txt" {
-                let recording = Recording(fileURL: directoryContents[1], createdAt: getFileDate(for: directoryContents[1]), isPlaying: false, selectedTime: nil, transcription: "")
+                let recording = Recording(fileURL: directoryContents[1], createdAt: getFileDate(for: directoryContents[1]), isPlaying: false, selectedTime: nil, transcription: "", duration: savedTimer, name: recordingNumber)
                 let text = TranscriptionText(fileURL: directoryContents[0], createdAt: getFileDate(for: directoryContents[0]), isPlaying: false, transcription: getFileText(for: directoryContents[0]) ?? "")
                 textRecordingList[text] = recording
             }
@@ -278,7 +290,7 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
             for newURL in new_contents {
                 if !old_contents.contains(newURL) {
                     if newURL.pathExtension == "m4a" {
-                        recording = Recording(fileURL: newURL, createdAt: getFileDate(for: newURL), isPlaying: false, selectedTime: nil, transcription: "")
+                        recording = Recording(fileURL: newURL, createdAt: getFileDate(for: newURL), isPlaying: false, selectedTime: nil, transcription: "",duration: savedTimer, name:recordingNumber)
                     }else if newURL.pathExtension == "txt" {
                         text = TranscriptionText(fileURL: newURL, createdAt: getFileDate(for: newURL), isPlaying: false, transcription: getFileText(for: newURL) ?? "")
                     }
@@ -370,6 +382,7 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
     func deleteRecording(url : URL) {
         
         do {
+            
             try FileManager.default.removeItem(at: url)
         } catch {
             print("Can't delete")
@@ -395,7 +408,7 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
         } catch {
             print("Can't delete")
         }
-        
+        recordingNumber = 0
         for i in 0..<textList.count {
             
             if textList[i].fileURL == url {
@@ -475,7 +488,3 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
     }
     
 }
-
-
-
-
