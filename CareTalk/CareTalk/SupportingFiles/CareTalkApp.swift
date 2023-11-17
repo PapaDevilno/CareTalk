@@ -16,10 +16,14 @@ struct CareTalkApp: App {
     var body: some Scene {
         WindowGroup {
             if userSettings.hasCompletedOnboarding {
-                OnboardingOpeningScreen(viewModel: OnboardingViewModel())
+                NavigationView{
+                    OnboardingOpeningScreen(viewModel: OnboardingViewModel())
+                }
             } else {
+                
                 ContentView()
                     .environmentObject(vm)
+                
             }
         }
     }

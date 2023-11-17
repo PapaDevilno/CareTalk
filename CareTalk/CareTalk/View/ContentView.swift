@@ -12,7 +12,10 @@ struct ContentView: View {
 
     var body: some View {
 //        OnboardingOpeningScreen(viewModel: onboardingViewModel)
-        MainOpening(viewModel: OnboardingViewModel())
+        NavigationStack{
+            MainOpening(viewModel: OnboardingViewModel())
+        }
+        
     }
 }
 

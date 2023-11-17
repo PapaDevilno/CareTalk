@@ -12,7 +12,7 @@ struct OnboardingOpeningScreen: View {
     @ObservedObject var viewModel: OnboardingViewModel
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 Color(.white)
                     .ignoresSafeArea()

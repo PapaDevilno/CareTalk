@@ -10,22 +10,27 @@
 //struct GalleryView: View {
 //    
 //    @ObservedObject var galleryViewModel = GalleryViewModel()
+//    @ObservedObject var viewModel: OnboardingViewModel
 //    //@Binding var isExpanded: Bool
+//    @State private var isMainPagePresented = false
+//    @Environment(\.presentationMode) var presentationMode
+//    
 //    
 //    @State var count = 0
 //    
 //    var body: some View {
 //        
-//        
+//        NavigationView{
 //        ZStack {
 //            Color(AppColor.blue)
 //                .edgesIgnoringSafeArea(.all)
-//            VStack{
+//            VStack(alignment: .leading){
 //                Text(StringResources().galleryTitle)
 //                    .fontWeight(.semibold)
 //                    .font(.largeTitle)
 //                    .foregroundColor(.white)
-//                    .padding(.bottom, 20)
+//                    .padding(.bottom, 10)
+//                    .padding(.leading, 20)
 //                
 //                //ScrollView{
 //                VStack{
@@ -38,14 +43,15 @@
 //                            
 //                        }
 //                        //.frame(height: .infinity)
-//                        .padding(.bottom, 10)
+//                        .padding(.bottom, 90)
 //                    }
 //                }
 //                
 //                //                }//.frame(height: .infinity)
 //                //                    .border(Color.black)
 //                
-//                //Spacer()
+//                Spacer()
+//                
 //                
 //                //                ZStack{
 //                //
@@ -72,65 +78,118 @@
 //                
 //                
 //                switch count {
-//                    case 0:
+//                case 0:
+//                    VStack(alignment: .leading){
+//                        Text(StringResources().galleryDesc_First)
+//                            .foregroundColor(.white)
+//                        
 //                        VStack(alignment: .leading){
-//                            Text(StringResources().galleryDesc_First)
+//                            Text(StringResources().galleryDesc_Tap).foregroundColor(.white) +
+//                            Text("'\(StringResources().yourRecording)'").foregroundColor(.white)
+//                                .bold() + 
+//                            Text(StringResources().galleryDesc_Second)
 //                                .foregroundColor(.white)
 //                            
-//                            VStack(alignment: .leading){
-//                                Text(StringResources().galleryDesc_Second)
-//                                    .foregroundColor(.white)
-//                                
-//                            }.padding(.top, 20)
-//                        }.frame(width: 300)
-//                    case 1:
-//                        VStack(alignment: .leading){
-//                            Text(StringResources().pressClose)
-//                                .foregroundColor(.white)
-//                        }.frame(width: 300)
-//                    case 2:
-//                        VStack(alignment: .leading){
+//                        }
+//                        .padding(.top, 20)
+//                    }.frame(width: 300)
+//                        .padding(.bottom, 50)
+//                        .padding(.leading, 20)
+//                        
+//                case 1:
+//                    VStack(alignment: .leading){
+//                        Text(StringResources().galleryDesc_Tap).foregroundColor(.white) +
+//                        Text("'\(StringResources().close)'")
+//                            .foregroundColor(.white)
+//                            .bold() +
+//                        
+//                        Text(StringResources().pressClose)
+//                            .foregroundColor(.white)
+//                    }.frame(width: 300)
+//                        .padding(.bottom, 50)
+//                    
+//                case 2:
+//                    //NavigationView{
+//                    
+//                    VStack(alignment: .leading){
 //                        Text(StringResources().galleryDesc_Third)
 //                            .foregroundColor(.white)
+//                        
+//                        VStack(alignment: .leading){
+//                            Text(StringResources().swipeRight).foregroundColor(.white)
+//                                .bold() + Text(StringResources().galleryDesc_Fourth)
+//                                .foregroundColor(.white)
 //                            
-//                            VStack(alignment: .leading){
-//                                Text(StringResources().swipeRight).foregroundColor(.white)
-//                                    .bold()
-//                            }.padding(.top, 20)
-//                        }.frame(width: 300)
-//                    default:
-//                        Text("")
+//                            
+//                        }.padding(.top, 20)
+//                        
+//                    }.frame(width: 300)
+//                        .padding(.bottom, 50)
+//                        .padding(.leading, 20)
+//                        .onAppear{
+//                            count = 2
+//                        }
+//                default:
+//                    Text("")
 //                }
-//               
-//                        //.padding(.bottom, 270)
-//                Spacer()
 //                
-////                Button(action: {
-////                    galleryViewModel.isExpanded = false
-////                }){
-////                    Text("This Button")
-////                }
-////                VStack{
-////                    CloseButton()
-////                }
-////                .onTapGesture {
-////                    galleryViewModel.isExpanded = false
-////                    galleryViewModel.isClosed = true
-////                }
-//                    //di main nnti hapus height sama ganti padding .bottom jdi 90
+//                //.padding(.bottom, 270)
+//                //Spacer()
 //                
-//                    //di main nanti enable scrollviewnya
-//                    //di main nanti hapus Spacer() di bawah width: 300
+//                //                Button(action: {
+//                //                    galleryViewModel.isExpanded = false
+//                //                }){
+//                //                    Text("This Button")
+//                //                }
+//                //                VStack{
+//                //                    CloseButton()
+//                //                }
+//                //                .onTapGesture {
+//                //                    galleryViewModel.isExpanded = false
+//                //                    galleryViewModel.isClosed = true
+//                //                }
+//                //di main nnti hapus height sama ganti padding .bottom jdi 90
+//                
+//                //di main nanti enable scrollviewnya
+//                //di main nanti hapus Spacer() di bawah width: 300
 //                //}
 //                
 //                
 //                
 //                
 //            }
+//            .padding(.top, 40)
 //        }
+//        .gesture(
+//            DragGesture()
+//                .onChanged { gesture in
+//                    if gesture.translation.width > 200 {
+//                        
+//                        self.presentationMode.wrappedValue.dismiss()
+//                        self.isMainPagePresented = true
+//
+//                    }
+//                }
+//        )
+//        .background(
+//            NavigationLink(
+//                
+//                destination:
+//                    OnBoardingInterpretation(viewModel: OnboardingViewModel()),
+//                isActive: $isMainPagePresented
+//            ) {
+//                EmptyView()
+//            }
+//        )
+//        .navigationBarTitle("")
+//        .navigationBarHidden(true)
+//        .navigationBarBackButtonHidden(true)
 //    }
+//        
 //}
+//    }
+//
 //
 //#Preview {
-//    GalleryView()
+//    GalleryView(viewModel: OnboardingViewModel())
 //}

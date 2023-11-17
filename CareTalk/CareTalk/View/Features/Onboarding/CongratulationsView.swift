@@ -12,7 +12,7 @@ struct CongratulationsView: View {
     @ObservedObject var howToRecordViewModel = HowToRecordViewModel()
     
     var body: some View {
-        
+//        NavigationView{
         ZStack{
             Color(AppColor.blue)
                 .edgesIgnoringSafeArea(.all)
@@ -20,7 +20,7 @@ struct CongratulationsView: View {
                 VStack(alignment: .leading, spacing: 0){
                     Text(StringResources().congratulate)
                         .fontWeight(.bold)
-                        .font(.title)
+                        .font(.largeTitle)
                         .foregroundColor(AppColor.pink)
                         .padding(.bottom, 5)
                     
@@ -71,7 +71,7 @@ struct CongratulationsView: View {
                 
                 VStack{
                     RoundedRectangleButton(text: StringResources().finish)
-                        .padding(.bottom, 60)
+                        .padding(.bottom, 120)
                 }
             }
         }

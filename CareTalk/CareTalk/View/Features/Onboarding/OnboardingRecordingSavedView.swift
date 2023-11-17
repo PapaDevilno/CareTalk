@@ -1,19 +1,17 @@
 //
-//  RecordingSavedView.swift
+//  OnboardingRecordingSavedView.swift
 //  CareTalk
 //
-//  Created by Nicholas Yvees on 10/11/23.
+//  Created by Nicholas Yvees on 17/11/23.
 //
 
 import SwiftUI
 
-struct RecordingSavedView: View {
+struct OnboardingRecordingSavedView: View {
     
     @ObservedObject var viewModel = MainViewModel()
-    @Binding var rootActive: Bool
     
     var body: some View {
-        
         ZStack{
             Color(AppColor.blue)
                 .ignoresSafeArea()
@@ -44,13 +42,14 @@ struct RecordingSavedView: View {
         .onTapGesture {
             viewModel.isTapped = true
             viewModel.navigateToNextView = true
-            rootActive = false
         }
-        
         .navigationBarBackButtonHidden(true)
+        .navigationDestination(isPresented: $viewModel.navigateToNextView){
+            CongratsView()
+        }
     }
 }
 
-#Preview {
-    RecordingSavedView(rootActive: .constant(false))
-}
+//#Preview {
+//    OnboardingRecordingSavedView()
+//}

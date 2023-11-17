@@ -9,6 +9,8 @@ import Foundation
 
 struct StringResources {
     
+    let language = "Indonesia"
+    
     ///Tutorial
     //OnBoarding =================
     
@@ -23,16 +25,17 @@ struct StringResources {
     
     let galleryTitle = "Rekaman"
     let galleryCongratulateFirst = "Selamat!"
-    let galleryCongratulate = "Kamu telah berhasil menggunakan "
-    let seeGallery = "kamu dapat melihat galeri rekaman sebelumnya dengan cara "
+    let galleryCongratulate = "Anda telah berhasil mempelajari "
+    let seeGallery = "Kamu dapat melihat galeri rekaman sebelumnya dengan cara "
     let swipeLeft = "geser ke kiri"
     
     //OnBoarding - Gallery pt2
     
     let galleryDesc_First = "Berikut adalah hasil suara yang sudah direkam dan diinterpretasi sebelumnya"
-    let galleryDesc_Second = "Ketuk 'Rekaman kamu' tersebut untuk menampilkan hasilnya"
+    let galleryDesc_Tap = "Ketuk "
+    let galleryDesc_Second = " tersebut untuk menampilkan hasilnya"
     let yourRecording = "Rekaman kamu"
-    let pressClose = "Ketuk 'Tutup' untuk menutup teks interpretasi"
+    let pressClose = " untuk menutup teks interpretasi"
     //OnBoarding - Gallery pt3
     
     let galleryDesc_Third = "Kamu dapat memutar ulang audio yang direkam, membaca transkripsi, dan menghapus rekaman sebelumnya"
@@ -45,7 +48,7 @@ struct StringResources {
     
     //OnBoarding - How To Record
     
-    let howTo = "Cara menggunakan :"
+    let howTo = "Petunjuk :"
     let remember = "Ingat:"
     let firstHowTo = "Ketuk di mana saja agar saya bisa mendengarkan."
     let secondHowTo = "Ucapkan kalimat yang ingin diinterpretasi oleh si pasien."
@@ -66,5 +69,6 @@ struct StringResources {
     let tips = "Tips"
     let tipsDesc = "Untuk memperjelas hasil interpretasi, aku menyarankan untuk memberikan Airpods pada pasien saat menggunakan "
     
-    
+    //OnBoarding - Interpretation
+    let interpretDesc_First = "Berikut adalah halaman interpretasi. Kamu dapat melihat galeri rekaman sebelumnya dengan cara "
 }

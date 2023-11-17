@@ -15,7 +15,7 @@ struct RoundedRectangleButton: View {
     
     var body: some View {
         ZStack{
-            RoundedRectangle(cornerRadius: 12)
+            RoundedRectangle(cornerRadius: 20)
                 .fill(Color.white)
                 .frame(width: buttonWidth, height: buttonHeight)
                 .overlay(
