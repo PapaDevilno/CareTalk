@@ -77,9 +77,22 @@ struct MainOpening: View {
                     
                 }
         )
+//        .gesture(
+//            DragGesture()
+//                .onChanged { gesture in
+//                    print("swiped")
+//                    if gesture.translation.width < -50 {
+//                        viewModel.navigateToNextView = true
+//                    }
+//                }
+//        )
+
         .navigationBarBackButtonHidden(true)
         .navigationDestination(isPresented: $isActive){
             MainListening(viewModel: OnboardingViewModel(), rootActive: $isActive)
+        }
+        .navigationDestination(isPresented: $viewModel.navigateToNextView){
+            RecordingListView()
         }
     }
 }

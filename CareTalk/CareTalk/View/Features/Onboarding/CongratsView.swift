@@ -50,13 +50,19 @@ struct CongratsView: View {
                 .padding(.bottom, 50)
                 .padding(.top, 200)
         }
-        .onTapGesture {
-            // Check if CongratsView should be presented
-            if self.hasShownCongrats {
+//        .onTapGesture {
+//            // Check if CongratsView should be presented
+//            if self.hasShownCongrats {
+//                self.isGalleryViewPresented = true
+//            } else {
+//                // If not shown, mark as shown and wait for tap
+//                self.hasShownCongrats = true
+//            }
+//        }
+        .onAppear {
+            // Schedule a delay to set isGalleryViewPresented to true after 1 second
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 self.isGalleryViewPresented = true
-            } else {
-                // If not shown, mark as shown and wait for tap
-                self.hasShownCongrats = true
             }
         }
         .navigationBarTitle("")
@@ -64,36 +70,6 @@ struct CongratsView: View {
         .navigationDestination(isPresented: $isGalleryViewPresented){
             OnBoardingInterpretation(viewModel: OnboardingViewModel(), rActive: $rActive)
         }
-        
-        
-        
-        //            .gesture(
-        //                DragGesture()
-        //                    .onChanged { gesture in
-        //                        if gesture.translation.width < -200 {
-        //                            // Swipe left, navigate to GalleryView
-        //                            self.presentationMode.wrappedValue.dismiss()
-        //                            self.isGalleryViewPresented = true
-        //
-        //                        }
-        //                    }
-        //            )
-        //            .background(
-        //                NavigationLink(
-        //                    destination: OnBoardingInterpretation(viewModel: OnboardingViewModel()),
-        //                    isActive: $isGalleryViewPresented
-        //                ) {
-        //                    EmptyView()
-        //                }
-        //            )
-        //            .navigationBarTitle("")
-        //            .navigationBarHidden(true)
-        //            .navigationBarBackButtonHidden(true)
-        
-        
-        //        .fullScreenCover(isPresented: $isGalleryViewPresented, content: {
-        //                        GalleryView()
-        //                    })
         
     }
     

@@ -11,6 +11,7 @@ struct OnboardingOpeningScreen: View {
     
     @ObservedObject var viewModel: OnboardingViewModel
     //    @State private var isOnboardingComplete = false
+    @EnvironmentObject var userSettings: UserSettings
     
     
     var body: some View {
@@ -94,12 +95,17 @@ struct OnboardingOpeningScreen: View {
                                     RoundedButton(text: "Pelajari Lebih Lanjut")
                                 }
                                 
-                                Text("Lewati Tutorial")
-                                    .font(.system(size: 18))
-                                    .fontWeight(.medium)
-                                    .foregroundColor(.white)
-                                    .underline()
-                                    .padding(.top)
+                                Button(action: {
+                                    userSettings.hasCompletedOnboarding = true
+                                }, label: {
+                                    Text("Lewati Tutorial")
+                                        .font(.system(size: 18))
+                                        .fontWeight(.medium)
+                                        .foregroundColor(.white)
+                                        .underline()
+                                        .padding(.top)
+                                })
+
                             }
                             .opacity(viewModel.showIntroText ? 1 : 0) // Initially hidden
                             .animation(.easeInOut(duration: 2.0).delay(3.0)) // Delayed animation

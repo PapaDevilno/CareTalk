@@ -49,14 +49,29 @@ struct RecordingSavedView: View {
             .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
         
         }
-        .onTapGesture {
-            if source == .main{
+//        .onTapGesture {
+//            if source == .main{
+//                viewModel.isTapped = true
+//                rootActive?.wrappedValue = false
+//            } else if source == .onboarding{
+//                viewModel.navigateToNextView = true
+//            }
+//            
+//        }
+        .onAppear {
+            if source == .main {
                 viewModel.isTapped = true
-                rootActive?.wrappedValue = false
-            } else if source == .onboarding{
-                viewModel.navigateToNextView = true
+                
+                // Schedule a delay to set rootActive to false after 1 second
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    rootActive?.wrappedValue = false
+                }
+            } else if source == .onboarding {
+                // Schedule a delay to set navigateToNextView to true after 1 second
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    viewModel.navigateToNextView = true
+                }
             }
-            
         }
         .navigationBarBackButtonHidden(true)
         .navigationDestination(isPresented: $viewModel.navigateToNextView){
