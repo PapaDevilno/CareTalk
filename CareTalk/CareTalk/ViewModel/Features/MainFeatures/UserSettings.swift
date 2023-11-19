@@ -13,8 +13,11 @@ class UserSettings: ObservableObject {
             UserDefaults.standard.set(hasCompletedOnboarding, forKey: "hasCompletedOnboarding")
         }
     }
-
+    
     init() {
         self.hasCompletedOnboarding = UserDefaults.standard.bool(forKey: "hasCompletedOnboarding")
     }
 }
+
+
+

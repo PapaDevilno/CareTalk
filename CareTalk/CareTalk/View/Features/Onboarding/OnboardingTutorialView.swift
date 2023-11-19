@@ -10,6 +10,7 @@ import SwiftUI
 struct OnboardingTutorialView: View {
     
     @ObservedObject var viewModel: OnboardingViewModel
+    @State private var repeatTutorial: Bool = false
     
     var body: some View {
         ZStack{
@@ -75,13 +76,14 @@ struct OnboardingTutorialView: View {
                         viewModel.isLongPressing = false
                         viewModel.animationComplete = true
                         viewModel.navigateToNextView = true
+                        repeatTutorial = true
                     }
                     
                 }
         )
         .navigationBarBackButtonHidden(true)
-        .navigationDestination(isPresented: $viewModel.navigateToNextView){
-            OnboardingListeningView(viewModel: OnboardingViewModel())
+        .navigationDestination(isPresented: $repeatTutorial){
+            OnboardingListeningView(viewModel: OnboardingViewModel(), rActive: $repeatTutorial)
         }
     }
 }

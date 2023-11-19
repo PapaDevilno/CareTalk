@@ -10,6 +10,9 @@ import SwiftUI
 struct HowToRecordView: View {
     
     @ObservedObject var howToRecordViewModel = HowToRecordViewModel()
+    @EnvironmentObject var userSettings: UserSettings
+//    @Environment(\.presentationMode) var presentationMode
+    @Binding var rActive: Bool
     
     var body: some View {
         
@@ -52,20 +55,36 @@ struct HowToRecordView: View {
                 }
                 .frame(width: 300)
                 .padding(.top, 40)
-                                Spacer()
+                
+                Spacer()
                 
                 VStack{
-                    RoundedRectangleButton(text: StringResources().repeatTutorial)
+//                    NavigationLink {
+//                        OnboardingTutorialView(viewModel: OnboardingViewModel())
+//                    } label: {
+//                        RoundedRectangleButton(text: "Ulangi tutorial")
+//                    }
                     
-                    RoundedRectangleButton(text: StringResources().close)
+                    Button(action: {
+                        rActive = false
+                    }, label: {
+                        RoundedRectangleButton(text: "Ulangi tutorial")
+                    })
+                    
+                    Button(action: {
+                        userSettings.hasCompletedOnboarding = true
+                    }, label: {
+                        RoundedRectangleButton(text: "Tutup")
+                    })
                 }
                 .padding(.bottom, 90)
                 
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
-#Preview {
-    HowToRecordView()
-}
+//#Preview {
+//    HowToRecordView()
+//}

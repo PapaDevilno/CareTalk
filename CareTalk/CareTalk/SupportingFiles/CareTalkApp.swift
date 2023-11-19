@@ -6,25 +6,27 @@
 //
 
 import SwiftUI
+import UIKit
 
 @main
 struct CareTalkApp: App {
     
-    @StateObject var userSettings = UserSettings()
+    @ObservedObject var userSettings = UserSettings()
     @ObservedObject var vm = VoiceViewModel()
     
     var body: some Scene {
         WindowGroup {
+            
             if userSettings.hasCompletedOnboarding {
-                NavigationView{
-                    OnboardingOpeningScreen(viewModel: OnboardingViewModel())
-                }
-            } else {
-                
                 ContentView()
                     .environmentObject(vm)
-                
+                    .environmentObject(userSettings)
+            } else {
+                OnboardingOpeningScreen(viewModel: OnboardingViewModel())
+                    .environmentObject(vm)
+                    .environmentObject(userSettings)
             }
+            
         }
     }
 }

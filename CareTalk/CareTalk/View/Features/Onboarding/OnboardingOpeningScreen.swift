@@ -10,6 +10,8 @@ import SwiftUI
 struct OnboardingOpeningScreen: View {
     
     @ObservedObject var viewModel: OnboardingViewModel
+    //    @State private var isOnboardingComplete = false
+    
     
     var body: some View {
         NavigationStack {
@@ -67,46 +69,46 @@ struct OnboardingOpeningScreen: View {
                                 }
                             }
                             
-//                            if viewModel.showIntroTitle{
-                                Text("Aku adalah teman\nvirtual yang siap\nmembantu kamu\nberkomunikasi\ndengan orang-orang\nyang mengalami\nkesulitan berbicara\nakibat disartria")
-                                    .font(.system(size: 28))
-                                    .fontWeight(.light)
-                                    .foregroundColor(.white)
-                                    .frame(maxWidth: .infinity, alignment: .center)
-                                    .padding(EdgeInsets(top: 5, leading: 20, bottom: 40, trailing: 0))
-                                    .opacity(viewModel.showIntroTitle ? 1 : 0)
-                                    .animation(.easeInOut(duration: 2.0).delay(2.0))
-                                    .onAppear {
-                                        withAnimation {
-                                            viewModel.updateBackgroundImage()
-                                            viewModel.showIntroText = true
-                                        }
-                                    }
-//                            }
-                           
-//                            if viewModel.showIntroText{
-                                VStack {
-                                    NavigationLink {
-                                        OnboardingTutorialView(viewModel: OnboardingViewModel())
-                                    } label: {
-                                        RoundedButton(text: "Pelajari Lebih Lanjut")
-                                    }
-                                    
-                                    Text("Lewati Tutorial")
-                                        .font(.system(size: 18))
-                                        .fontWeight(.medium)
-                                        .foregroundColor(.white)
-                                        .underline()
-                                        .padding(.top)
-                                }
-                                .opacity(viewModel.showIntroText ? 1 : 0) // Initially hidden
-                                .animation(.easeInOut(duration: 2.0).delay(3.0)) // Delayed animation
+                            //                            if viewModel.showIntroTitle{
+                            Text("Aku adalah teman\nvirtual yang siap\nmembantu kamu\nberkomunikasi\ndengan orang-orang\nyang mengalami\nkesulitan berbicara\nakibat disartria")
+                                .font(.system(size: 28))
+                                .fontWeight(.light)
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity, alignment: .center)
+                                .padding(EdgeInsets(top: 5, leading: 20, bottom: 40, trailing: 0))
+                                .opacity(viewModel.showIntroTitle ? 1 : 0)
+                                .animation(.easeInOut(duration: 2.0).delay(2.0))
                                 .onAppear {
                                     withAnimation {
                                         viewModel.updateBackgroundImage()
+                                        viewModel.showIntroText = true
                                     }
                                 }
-//                            }
+                            //                            }
+                            
+                            //                            if viewModel.showIntroText{
+                            VStack {
+                                NavigationLink {
+                                    OnboardingTutorialView(viewModel: OnboardingViewModel())
+                                } label: {
+                                    RoundedButton(text: "Pelajari Lebih Lanjut")
+                                }
+                                
+                                Text("Lewati Tutorial")
+                                    .font(.system(size: 18))
+                                    .fontWeight(.medium)
+                                    .foregroundColor(.white)
+                                    .underline()
+                                    .padding(.top)
+                            }
+                            .opacity(viewModel.showIntroText ? 1 : 0) // Initially hidden
+                            .animation(.easeInOut(duration: 2.0).delay(3.0)) // Delayed animation
+                            .onAppear {
+                                withAnimation {
+                                    viewModel.updateBackgroundImage()
+                                }
+                            }
+                            //                            }
                             
                             
                             

@@ -12,6 +12,7 @@ struct CongratsView: View {
     @State private var isGalleryViewPresented = false
     @State private var hasShownCongrats: Bool = false
     @Environment(\.presentationMode) var presentationMode
+    @Binding var rActive: Bool
     
     var body: some View {
         ZStack{
@@ -60,15 +61,9 @@ struct CongratsView: View {
         }
         .navigationBarTitle("")
         .navigationBarHidden(true)
-        .overlay(
-            NavigationLink(
-                destination: OnBoardingInterpretation(viewModel: OnboardingViewModel()),
-                isActive: $isGalleryViewPresented
-            ) {
-                EmptyView()
-            }
-                .hidden()
-        )
+        .navigationDestination(isPresented: $isGalleryViewPresented){
+            OnBoardingInterpretation(viewModel: OnboardingViewModel(), rActive: $rActive)
+        }
         
         
         
@@ -104,6 +99,6 @@ struct CongratsView: View {
     
 }
 
-#Preview {
-    CongratsView()
-}
+//#Preview {
+//    CongratsView()
+//}

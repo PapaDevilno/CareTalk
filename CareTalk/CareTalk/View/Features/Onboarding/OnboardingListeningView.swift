@@ -11,6 +11,7 @@ struct OnboardingListeningView: View {
     
     @ObservedObject var viewModel: OnboardingViewModel
     @EnvironmentObject var vm: VoiceViewModel
+    @Binding var rActive: Bool
     
     var body: some View {
         ZStack{
@@ -134,9 +135,12 @@ struct OnboardingListeningView: View {
         )
         .opacity(viewModel.animationComplete ? 0.0 : 1.0)
         .navigationBarBackButtonHidden(true)
+        .navigationDestination(isPresented: $viewModel.navigateToNextView){
+            RecordingSavedView(rActive: $rActive, source: .onboarding)
+        }
     }
 }
 
-#Preview {
-    OnboardingListeningView(viewModel: OnboardingViewModel())
-}
+//#Preview {
+//    OnboardingListeningView(viewModel: OnboardingViewModel())
+//}

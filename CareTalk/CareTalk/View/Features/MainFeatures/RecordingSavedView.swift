@@ -7,10 +7,18 @@
 
 import SwiftUI
 
+enum NavigationSource {
+    case main
+    case onboarding
+}
+
 struct RecordingSavedView: View {
     
     @ObservedObject var viewModel = MainViewModel()
-    @Binding var rootActive: Bool
+//    @Binding var rootActive: Bool
+    @Binding var rActive: Bool
+    var rootActive: Binding<Bool>?
+    let source: NavigationSource
     
     var body: some View {
         
@@ -42,15 +50,21 @@ struct RecordingSavedView: View {
         
         }
         .onTapGesture {
-            viewModel.isTapped = true
-            viewModel.navigateToNextView = true
-            rootActive = false
+            if source == .main{
+                viewModel.isTapped = true
+                rootActive?.wrappedValue = false
+            } else if source == .onboarding{
+                viewModel.navigateToNextView = true
+            }
+            
         }
-        
         .navigationBarBackButtonHidden(true)
+        .navigationDestination(isPresented: $viewModel.navigateToNextView){
+            CongratsView(rActive: $rActive)
+        }
     }
 }
 
-#Preview {
-    RecordingSavedView(rootActive: .constant(false))
-}
+//#Preview {
+//    RecordingSavedView(rootActive: .constant(false))
+//}

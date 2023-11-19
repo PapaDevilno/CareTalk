@@ -82,7 +82,7 @@ struct MainListening: View {
         
         .navigationBarBackButtonHidden(true)
         .navigationDestination(isPresented: $viewModel.navigateToNextView){
-            RecordingSavedView(rootActive: $rootActive)
+            RecordingSavedView(rActive: $rootActive, rootActive: $rootActive, source: .main)
         }
         
     }

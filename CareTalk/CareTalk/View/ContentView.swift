@@ -15,6 +15,7 @@ struct ContentView: View {
         NavigationStack{
             MainOpening(viewModel: OnboardingViewModel())
         }
+       
         
     }
 }
@@ -22,3 +23,4 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+ 

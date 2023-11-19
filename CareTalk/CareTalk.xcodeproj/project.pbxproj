@@ -29,7 +29,6 @@
 		683116502B06FAA7005C2C17 /* LanguageOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6831164F2B06FAA7005C2C17 /* LanguageOption.swift */; };
 		683116522B06FAB5005C2C17 /* OnBoardingInterpretation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683116512B06FAB5005C2C17 /* OnBoardingInterpretation.swift */; };
 		683116542B06FBBA005C2C17 /* StringResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683116532B06FBBA005C2C17 /* StringResources.swift */; };
-		683116562B06FE2E005C2C17 /* OnboardingRecordingSavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683116552B06FE2E005C2C17 /* OnboardingRecordingSavedView.swift */; };
 		6834C7AC2AF485350035077F /* OnboardingTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6834C7AB2AF485350035077F /* OnboardingTutorialView.swift */; };
 		6834C7AE2AF4B0350035077F /* OnboardingListeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6834C7AD2AF4B0350035077F /* OnboardingListeningView.swift */; };
 		685FADDD2AFCAFA000E63529 /* OnboardingOpeningScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685FADDC2AFCAFA000E63529 /* OnboardingOpeningScreen.swift */; };
@@ -80,7 +79,6 @@
 		6831164F2B06FAA7005C2C17 /* LanguageOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageOption.swift; sourceTree = "<group>"; };
 		683116512B06FAB5005C2C17 /* OnBoardingInterpretation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingInterpretation.swift; sourceTree = "<group>"; };
 		683116532B06FBBA005C2C17 /* StringResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringResources.swift; sourceTree = "<group>"; };
-		683116552B06FE2E005C2C17 /* OnboardingRecordingSavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRecordingSavedView.swift; sourceTree = "<group>"; };
 		6834C7AB2AF485350035077F /* OnboardingTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTutorialView.swift; sourceTree = "<group>"; };
 		6834C7AD2AF4B0350035077F /* OnboardingListeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingListeningView.swift; sourceTree = "<group>"; };
 		685FADDC2AFCAFA000E63529 /* OnboardingOpeningScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingOpeningScreen.swift; sourceTree = "<group>"; };
@@ -259,7 +257,6 @@
 				685FADDC2AFCAFA000E63529 /* OnboardingOpeningScreen.swift */,
 				6834C7AB2AF485350035077F /* OnboardingTutorialView.swift */,
 				6834C7AD2AF4B0350035077F /* OnboardingListeningView.swift */,
-				683116552B06FE2E005C2C17 /* OnboardingRecordingSavedView.swift */,
 				683116452B06FA15005C2C17 /* CongratsView.swift */,
 				683116512B06FAB5005C2C17 /* OnBoardingInterpretation.swift */,
 				683116472B06FA26005C2C17 /* CongratulationsView.swift */,
@@ -446,7 +443,6 @@
 				683116442B06F9FC005C2C17 /* GalleryView.swift in Sources */,
 				6831164E2B06FA86005C2C17 /* LanguageToggle.swift in Sources */,
 				687985A82AF9DF83008D8A71 /* HowToRecordViewModel.swift in Sources */,
-				683116562B06FE2E005C2C17 /* OnboardingRecordingSavedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,7 +576,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CareTalk/Preview Content\"";
-				DEVELOPMENT_TEAM = KGMG9ZB867;
+				DEVELOPMENT_TEAM = K685PAJ23Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = test;
@@ -610,7 +606,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CareTalk/Preview Content\"";
-				DEVELOPMENT_TEAM = KGMG9ZB867;
+				DEVELOPMENT_TEAM = K685PAJ23Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = test;

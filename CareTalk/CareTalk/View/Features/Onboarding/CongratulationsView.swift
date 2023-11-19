@@ -10,9 +10,9 @@ import SwiftUI
 struct CongratulationsView: View {
     
     @ObservedObject var howToRecordViewModel = HowToRecordViewModel()
+    @Binding var rActive: Bool
     
     var body: some View {
-//        NavigationView{
         ZStack{
             Color(AppColor.blue)
                 .edgesIgnoringSafeArea(.all)
@@ -70,14 +70,19 @@ struct CongratulationsView: View {
                 Spacer()
                 
                 VStack{
-                    RoundedRectangleButton(text: StringResources().finish)
-                        .padding(.bottom, 120)
+                    NavigationLink {
+                        TipsView(rActive: $rActive)
+                    } label: {
+                        RoundedRectangleButton(text: "Selesai")
+                            .padding(.bottom, 120)
+                    }
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
-#Preview {
-    CongratulationsView()
-}
+//#Preview {
+//    CongratulationsView()
+//}

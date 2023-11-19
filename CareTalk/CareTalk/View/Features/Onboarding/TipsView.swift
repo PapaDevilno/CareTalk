@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TipsView: View {
+    
+    @Binding var rActive: Bool
+    
     var body: some View {
         ZStack{
             Color(AppColor.blue)
@@ -31,13 +34,18 @@ struct TipsView: View {
                 .frame(width: 300)
                 .padding(.top, 40)
                 Spacer()
-                RoundedRectangleButton(text: StringResources().close)
-                    .padding(.bottom, 90)
+                NavigationLink {
+                    HowToRecordView(rActive: $rActive)
+                } label: {
+                    RoundedRectangleButton(text: "Tutup")
+                        .padding(.bottom, 90)
+                }
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
-
-#Preview {
-    TipsView()
-}
+//
+//#Preview {
+//    TipsView()
+//}
