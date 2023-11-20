@@ -15,7 +15,8 @@ struct Recording : Equatable, Hashable {
     var transcription: String? // Property to store the transcription text
     var duration : String?
     var name : Int?
-    init(fileURL: URL, createdAt: Date, isPlaying: Bool, selectedTime: TimeInterval?, transcription: String, duration: String?, name: Int?) {
+    var exPand  : Bool
+    init(fileURL: URL, createdAt: Date, isPlaying: Bool, selectedTime: TimeInterval?, transcription: String, duration: String?, name: Int?, exPand : Bool) {
         self.fileURL = fileURL
         self.createdAt = createdAt
         self.isPlaying = isPlaying
@@ -23,6 +24,7 @@ struct Recording : Equatable, Hashable {
         self.transcription = transcription
         self.duration = duration
         self.name = name
+        self.exPand = exPand
     }
 }
 

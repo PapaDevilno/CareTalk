@@ -45,7 +45,7 @@ struct RecordingListView: View {
                                 }) {
                                     Image(systemName: "xmark.circle.fill")
                                         .foregroundColor(.black)
-                                        .font(.system(size: 15))
+                                        .font(.system(size: 30))
                                 }
                             }
                         }

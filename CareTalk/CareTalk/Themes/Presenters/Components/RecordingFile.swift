@@ -15,7 +15,7 @@ struct RecordingFile: View {
 //    @Binding var count: Int
     @EnvironmentObject var vm : VoiceViewModel
     
-    var recording : Recording
+    @State var recording : Recording
     var text: TranscriptionText
 //    var index: Int
     //    var recordingName: String
@@ -36,19 +36,20 @@ struct RecordingFile: View {
     
     var body: some View {
         ZStack(alignment: .top){
-            RoundedRectangle(cornerRadius: 10)
-                .fill(Color.white)
-                .frame(width: containerWidth, height: containerHeight)
+//            RoundedRectangle(cornerRadius: 10)
+//                .fill(Color.white)
+//                .frame(width: containerWidth, height: containerHeight)
             
             
             
             
-            if vm.isExpanded{
+            if recording.exPand {
+                
                 RecordingDetail(recording: recording, text: text)
                     .environmentObject(vm)
                     .frame(width: containerWidth, height: 225)
-                    .padding(.top, 40)
-                    .zIndex(-1)
+                    .padding(.top, 70)
+//                    .zIndex(-1)
             }
             
             
@@ -56,40 +57,43 @@ struct RecordingFile: View {
 //                Text("\(text.fileURL.lastPathComponent)")
 //                Text("Date: \(vm.extractDateFunction(from: text.fileURL.lastPathComponent).extractedDate)")
 //                Text("Time: \(vm.extractDateFunction(from: text.fileURL.lastPathComponent).extractedTime)")
-                Text("Recording " + String(recording.name ?? 0))
-                Text("Date: \(vm.extractDateAndTime(from: text.fileURL.lastPathComponent)!.extractedDate)")
-                Text("Time: \(vm.extractDateAndTime(from: text.fileURL.lastPathComponent)!.extractedTime)")
-                Text("Duration: \(recording.duration ?? "saved timer error")")
-//                HStack{
-//                    Text(galleryViewModel.getRecordingName(at: index))
-//                        .font(.headline)
-//                        .bold()
-//                        .fontWeight(.medium)
-//                        .padding(.leading, 20)
-//                    Spacer()
-//                    Text(String(galleryViewModel.getRecordingDurationHours(at: index)))
-//                        .font(.headline)
-//                        .bold()
-//                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-//                        .padding(.trailing, 20)
-//                }
-//                .frame(width: containerWidth)
-//                .padding(.top, 20)
-//
-//                HStack{
-//                    Text("\(galleryViewModel.getRecordingDate(at: index))")
-//                        .font(.footnote)
-//                    //Spacer()
-//                }
-//                .frame(width: containerWidth/2)
-//                .padding(.leading, 20)
+                HStack{
+                    Text("Recording " + String(recording.name ?? 0))
+                        .font(.system(size: 25))
+                        .fontWeight(.semibold)
+                    Spacer()
+                    Text("\(recording.duration ?? "saved timer error")")
+                        .font(.system(size: 25))
+                        .fontWeight(.semibold)
+                }
+                .padding(.bottom, 5)
+                
+//                Text("\(text.fileURL.lastPathComponent)")
+//                    .font(.system(size: 20))
+                
+                HStack{
+                    Text("Date: \(vm.extractDateAndTime(from: text.fileURL.lastPathComponent)!.extractedDate)")
+                        .font(.system(size: 20))
+                    Text(" at ")
+                        .font(.system(size: 20))
+                    Text("time: \(vm.extractDateAndTime(from: text.fileURL.lastPathComponent)!.extractedTime)")
+                        .font(.system(size: 20))
+                }
+                
+                
 
             }
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                .fill(Color.white)
+                .frame(width: containerWidth, height: containerHeight)
+            )
+            .padding()
             
         }
         .onTapGesture {
             withAnimation {
-                vm.isExpanded.toggle()
+                recording.exPand.toggle()
             }
             
 //            if count < 3 {
@@ -99,6 +103,8 @@ struct RecordingFile: View {
         }
     }
 }
+
+
 
 
 //#Preview {
