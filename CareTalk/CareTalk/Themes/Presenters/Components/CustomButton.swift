@@ -29,12 +29,13 @@ struct RoundedButton: View {
 struct CustomRoundedRectangle: View {
     
     @ObservedObject var viewModel: OnboardingViewModel
+    @EnvironmentObject var vm : VoiceViewModel
     
     var body: some View {
         Rectangle()
             .frame(width: 400, height: 700)
             .cornerRadius(150, corners: [.bottomRight]) // Specify the corner you want to round
-            .foregroundColor(viewModel.changeColor ? AppColor.red : AppColor.blue)
+            .foregroundColor(vm.changeColor ? AppColor.red : AppColor.blue)
     }
 }
 

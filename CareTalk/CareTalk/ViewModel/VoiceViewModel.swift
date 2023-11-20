@@ -19,7 +19,8 @@ import SoundAnalysis
 import SwiftUI
 
 class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
-     @ObservedObject var observer = AudioStreamObserver()
+    @ObservedObject var observer = AudioStreamObserver()
+//    @ObservedObject var viewModel : OnboardingViewModel
     
     var audioRecorder : AVAudioRecorder!
     var audioPlayer : AVAudioPlayer!
@@ -29,6 +30,8 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
     
     
     var indexOfPlayer = 0
+    var placeTextHere = ""
+    var placeHolderArray  : [String] = []
     
     @Published var outputText:String = "";
     
@@ -49,6 +52,7 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
     @Published var savedTimer : String?
     @Published var recordingNumber : Int = 0
     @Published var exPand : Bool = false
+    @Published var changeColor : Bool = false
     
     @Published var old_contents: [URL] = []
     @Published var new_contents: [URL] = []
@@ -64,6 +68,7 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
     override init(){
         super.init()
         outputText = ""
+        
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
@@ -170,16 +175,33 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
                 self.countSec += 1
                 self.timer = self.covertSecToMinAndHour(seconds: self.countSec)
                 
-                do{
-                    self.outputText = self.observer.fullSentence(words: self.observer.stringArray)
-                    try self.outputText.write(to: fileTextName, atomically: true, encoding: String.Encoding.utf8)
-                    
-                    if let index = self.recordingsList.firstIndex(where: { $0.fileURL == fileName }) {
-                        self.recordingsList[index].transcription = self.outputText
-                        self.textList[index].transcription = self.outputText
+                if !self.changeColor {
+                    do{
+                        if self.placeTextHere.isEmpty {
+                            self.outputText = self.observer.fullSentence(words: self.observer.stringArray)
+                        } else {
+                            self.outputText = self.placeTextHere + " " + self.observer.fullSentence(words: self.observer.stringArray)
+                        }
+                        
+                        self.placeHolderArray = self.observer.stringArray
+                        self.placeTextHere = self.outputText
+                        
+                        try self.outputText.write(to: fileTextName, atomically: true, encoding: String.Encoding.utf8)
+                        
+                        if let index = self.recordingsList.firstIndex(where: { $0.fileURL == fileName }) {
+                            self.recordingsList[index].transcription = self.outputText
+                            self.textList[index].transcription = self.outputText
                     }
                 } catch {
                     print("saving text error")
+                }
+                } else {
+                    
+//                    self.placeHolderArray = self.observer.stringArray
+                    self.observer.stringArray = []
+                    self.outputText = self.placeTextHere + " " + self.observer.fullSentence(words: self.observer.stringArray)
+//                    self.observer.stringArray = self.placeHolderArray
+                
                 }
                 
             })
@@ -277,13 +299,13 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
         
         if directoryContents.count <= 2 {
             if directoryContents[0].pathExtension == "m4a" && directoryContents[1].pathExtension == "txt" {
-                /*let*/ var recording = Recording(fileURL: directoryContents[0], createdAt: getFileDate(for: directoryContents[0]), isPlaying: false, selectedTime: nil, transcription: "", duration: savedTimer, name: recordingNumber, exPand: exPand)
+                /*let*/ let recording = Recording(fileURL: directoryContents[0], createdAt: getFileDate(for: directoryContents[0]), isPlaying: false, selectedTime: nil, transcription: "", duration: savedTimer, name: recordingNumber, exPand: exPand)
                 let text = TranscriptionText(fileURL: directoryContents[1], createdAt: getFileDate(for: directoryContents[1]), isPlaying: false, transcription: getFileText(for: directoryContents[1]) ?? "")
                 textRecordingList[text] = recording
             }
             
             if directoryContents[1].pathExtension == "m4a" && directoryContents[0].pathExtension == "txt" {
-                /*let*/ var recording = Recording(fileURL: directoryContents[1], createdAt: getFileDate(for: directoryContents[1]), isPlaying: false, selectedTime: nil, transcription: "", duration: savedTimer, name: recordingNumber,exPand: exPand)
+                /*let*/ let recording = Recording(fileURL: directoryContents[1], createdAt: getFileDate(for: directoryContents[1]), isPlaying: false, selectedTime: nil, transcription: "", duration: savedTimer, name: recordingNumber,exPand: exPand)
                 let text = TranscriptionText(fileURL: directoryContents[0], createdAt: getFileDate(for: directoryContents[0]), isPlaying: false, transcription: getFileText(for: directoryContents[0]) ?? "")
                 textRecordingList[text] = recording
             }
@@ -323,7 +345,8 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
         }
         
         old_contents = directoryContents
-        
+        self.placeHolderArray = []
+        self.placeTextHere = ""
         
     }
     

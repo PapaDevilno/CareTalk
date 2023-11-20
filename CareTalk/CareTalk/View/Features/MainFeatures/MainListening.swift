@@ -17,7 +17,7 @@ struct MainListening: View {
         ZStack{
             VStack {
                 VStack{
-                    if vm.outputText == "" {
+                    if vm.outputText.isEmpty {
                         Text("Ucapkan sesuatu...")
                             .font(.system(size: 20))
                             .fontWeight(.semibold)
@@ -42,14 +42,15 @@ struct MainListening: View {
         .ignoresSafeArea()
         .onAppear{
             vm.startRecording()
+            
         }
         .onTapGesture {
             withAnimation {
-                viewModel.changeColor.toggle()
+                vm.changeColor.toggle()
             }
         }
         .onTapGesture {
-            if !viewModel.changeColor {
+            if !vm.changeColor {
                 // When the color is not red, initiate a long-press gesture
                 withAnimation(Animation.easeInOut(duration: 2.0)) {
                     viewModel.isLongPressing = true
@@ -60,7 +61,7 @@ struct MainListening: View {
         .gesture(
             LongPressGesture(minimumDuration: 2.0)
                 .onChanged { _ in
-                    if !viewModel.changeColor { // Only enable long-press if not red
+                    if !vm.changeColor { // Only enable long-press if not red
                         withAnimation(Animation.easeInOut(duration: 2.0)) {
                             viewModel.isLongPressing = true
                             viewModel.animationComplete = true
@@ -68,7 +69,7 @@ struct MainListening: View {
                     }
                 }
                 .onEnded { _ in
-                    if !viewModel.changeColor { // Only navigate if not red
+                    if !vm.changeColor { // Only navigate if not red
                         withAnimation {
                             viewModel.isLongPressing = false
                             viewModel.animationComplete = true
