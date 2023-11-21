@@ -53,6 +53,7 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
     @Published var recordingNumber : Int = 0
     @Published var exPand : Bool = false
     @Published var changeColor : Bool = false
+    @Published var microphoneAccessGranted = false
     
     @Published var old_contents: [URL] = []
     @Published var new_contents: [URL] = []
@@ -67,7 +68,21 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
     
     override init(){
         super.init()
+//        requestMicrophoneAccess()
         outputText = ""
+        switch AVAudioSession.sharedInstance().recordPermission {
+            case .granted:
+                print("Permission granted")
+            case .denied:
+                print("Permission denied")
+            case .undetermined:
+                print("Request permission here")
+                AVAudioSession.sharedInstance().requestRecordPermission({ granted in
+                    // Handle granted
+                })
+            @unknown default:
+                print("Unknown case")
+            }
         
     }
     
@@ -510,5 +525,18 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
         
         
     }
+    
+    
+//    func requestMicrophoneAccess() {
+//        AVAudioSession.sharedInstance().requestRecordPermission { [weak self] granted in
+//            DispatchQueue.main.async {
+//                self?.microphoneAccessGranted = granted
+//                if !granted {
+//                    print("microphone access not granted")
+//                }
+//            }
+//            
+//        }
+//    }
     
 }
