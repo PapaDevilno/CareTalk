@@ -183,8 +183,7 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
                             self.outputText = self.placeTextHere + " " + self.observer.fullSentence(words: self.observer.stringArray)
                         }
                         
-                        self.placeHolderArray = self.observer.stringArray
-                        self.placeTextHere = self.outputText
+                       
                         
                         try self.outputText.write(to: fileTextName, atomically: true, encoding: String.Encoding.utf8)
                         
@@ -196,7 +195,8 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
                     print("saving text error")
                 }
                 } else {
-                    
+                    self.placeHolderArray = self.observer.stringArray
+                    self.placeTextHere = self.outputText
 //                    self.placeHolderArray = self.observer.stringArray
                     self.observer.stringArray = []
                     self.outputText = self.placeTextHere + " " + self.observer.fullSentence(words: self.observer.stringArray)
