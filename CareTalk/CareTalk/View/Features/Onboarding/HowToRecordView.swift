@@ -11,8 +11,9 @@ struct HowToRecordView: View {
     
     @ObservedObject var howToRecordViewModel = HowToRecordViewModel()
     @EnvironmentObject var userSettings: UserSettings
-//    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.presentationMode) var presentationMode
     @Binding var rActive: Bool
+    let source: NavigationSource
     
     var body: some View {
         
@@ -59,23 +60,26 @@ struct HowToRecordView: View {
                 Spacer()
                 
                 VStack{
-//                    NavigationLink {
-//                        OnboardingTutorialView(viewModel: OnboardingViewModel())
-//                    } label: {
-//                        RoundedRectangleButton(text: "Ulangi tutorial")
-//                    }
+                    if source == .onboarding{
+                        Button(action: {
+                            rActive = false
+                        }, label: {
+                            RoundedRectangleButton(text: "Ulangi tutorial")
+                        })
+                        
+                        Button(action: {
+                            userSettings.hasCompletedOnboarding = true
+                        }, label: {
+                            RoundedRectangleButton(text: "Tutup")
+                        })
+                    } else if source == .main {
+                        Button(action: {
+                            presentationMode.wrappedValue.dismiss()
+                        }, label: {
+                            RoundedRectangleButton(text: "Tutup")
+                        })
+                    }
                     
-                    Button(action: {
-                        rActive = false
-                    }, label: {
-                        RoundedRectangleButton(text: "Ulangi tutorial")
-                    })
-                    
-                    Button(action: {
-                        userSettings.hasCompletedOnboarding = true
-                    }, label: {
-                        RoundedRectangleButton(text: "Tutup")
-                    })
                 }
                 .padding(.bottom, 90)
                 

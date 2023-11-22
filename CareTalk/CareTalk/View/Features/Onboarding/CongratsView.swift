@@ -68,7 +68,7 @@ struct CongratsView: View {
         .navigationBarTitle("")
         .navigationBarHidden(true)
         .navigationDestination(isPresented: $isGalleryViewPresented){
-            OnBoardingInterpretation(viewModel: OnboardingViewModel(), rActive: $rActive)
+            RecordingListView(rActive: $rActive, source: .onboarding)
         }
         
     }

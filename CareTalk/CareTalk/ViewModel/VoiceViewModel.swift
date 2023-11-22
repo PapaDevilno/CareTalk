@@ -214,7 +214,7 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
                     self.placeTextHere = self.outputText
 //                    self.placeHolderArray = self.observer.stringArray
                     self.observer.stringArray = []
-                    self.outputText = self.placeTextHere + " " + self.observer.fullSentence(words: self.observer.stringArray)
+                    self.outputText = self.placeTextHere + self.observer.fullSentence(words: self.observer.stringArray)
 //                    self.observer.stringArray = self.placeHolderArray
                 
                 }

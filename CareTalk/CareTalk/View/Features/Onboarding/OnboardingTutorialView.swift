@@ -54,19 +54,19 @@ struct OnboardingTutorialView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity ,alignment: .topLeading)
             
-            if !viewModel.animationComplete{
-                Circle()
-                    .fill(AppColor.pink)
-                    .frame(width: viewModel.isLongPressing ? 1000 : 100, height: viewModel.isLongPressing ? 1000 : 100)
-                    .scaleEffect(viewModel.isLongPressing ? 1 : 0.001)
-            }
+//            if !viewModel.animationComplete{
+//                Circle()
+//                    .fill(AppColor.pink)
+//                    .frame(width: viewModel.isLongPressing ? 1000 : 100, height: viewModel.isLongPressing ? 1000 : 100)
+//                    .scaleEffect(viewModel.isLongPressing ? 1 : 0.001)
+//            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .gesture(
-            LongPressGesture(minimumDuration: 2.0)
+            LongPressGesture(minimumDuration: 1.0)
                 .onChanged { _ in
                     print("Long press started")
-                    withAnimation(Animation.easeInOut(duration: 2.0)) {
+                    withAnimation(Animation.easeInOut(duration: 1.0)) {
                         viewModel.isLongPressing = true
                     }
                 }

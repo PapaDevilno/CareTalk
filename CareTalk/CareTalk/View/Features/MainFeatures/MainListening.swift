@@ -59,10 +59,10 @@ struct MainListening: View {
             }
         }
         .gesture(
-            LongPressGesture(minimumDuration: 2.0)
+            LongPressGesture(minimumDuration: 1.0)
                 .onChanged { _ in
                     if !vm.changeColor { // Only enable long-press if not red
-                        withAnimation(Animation.easeInOut(duration: 2.0)) {
+                        withAnimation(Animation.easeInOut(duration: 1.0)) {
                             viewModel.isLongPressing = true
                             viewModel.animationComplete = true
                         }
@@ -79,8 +79,7 @@ struct MainListening: View {
                     }
                 }
         )
-        .opacity(viewModel.animationComplete ? 0.0 : 1.0)
-        
+//        .opacity(viewModel.animationComplete ? 0.0 : 1.0)
         .navigationBarBackButtonHidden(true)
         .navigationDestination(isPresented: $viewModel.navigateToNextView){
             RecordingSavedView(rActive: $rootActive, rootActive: $rootActive, source: .main)

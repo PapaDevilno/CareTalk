@@ -11,8 +11,8 @@ import UIKit
 @main
 struct CareTalkApp: App {
     
-    @ObservedObject var userSettings = UserSettings()
-    @ObservedObject var vm = VoiceViewModel()
+    @StateObject var userSettings = UserSettings()
+    @StateObject var vm = VoiceViewModel()
     
     var body: some Scene {
         WindowGroup {

@@ -33,7 +33,7 @@ struct OnboardingListeningView: View {
                 .padding(EdgeInsets(top: 100, leading: 0, bottom: 0, trailing: 0))
                 .background(CustomRoundedRectangle(viewModel: viewModel))
                 
-                if !viewModel.changeColor {
+                if !vm.changeColor {
                     VStack{
                         Text(viewModel.thirdState ? "Sekarang aku bisa mendengar kamu lagi!\nTeks interpretasi akan terus berlanjut" : "Aku sedang mendengarkanmu sekarang. Kamu dapat melihat kata-kata yang\nditerjemahkan di layar ini")
                             .font(.system(size:17))
@@ -99,12 +99,12 @@ struct OnboardingListeningView: View {
         }
         .onTapGesture {
             withAnimation {
-                viewModel.changeColor.toggle()
+                vm.changeColor.toggle()
                 viewModel.thirdState = true
             }
         }
         .onTapGesture {
-            if !viewModel.changeColor {
+            if !vm.changeColor {
                 // When the color is not red, initiate a long-press gesture
                 withAnimation(Animation.easeInOut(duration: 2.0)) {
                     viewModel.isLongPressing = true
@@ -113,16 +113,18 @@ struct OnboardingListeningView: View {
             }
         }
         .gesture(
-            LongPressGesture(minimumDuration: 2.0)
+            LongPressGesture(minimumDuration: 1.0)
                 .onChanged { _ in
-                    if !viewModel.changeColor { // Only enable long-press if not red
-                        withAnimation(Animation.easeInOut(duration: 2.0)) {
+                    print("long tap pressed")
+                    if !vm.changeColor { // Only enable long-press if not red
+                        withAnimation(Animation.easeInOut(duration: 1.0)) {
                             viewModel.isLongPressing = true
                             viewModel.animationComplete = true
                         }
                     }
                 }
                 .onEnded { _ in
+                    print("long tap stopped")
                     if !viewModel.changeColor { // Only navigate if not red
                         withAnimation {
                             viewModel.isLongPressing = false
@@ -133,7 +135,7 @@ struct OnboardingListeningView: View {
                     }
                 }
         )
-        .opacity(viewModel.animationComplete ? 0.0 : 1.0)
+//        .opacity(viewModel.animationComplete ? 0.0 : 1.0)
         .navigationBarBackButtonHidden(true)
         .navigationDestination(isPresented: $viewModel.navigateToNextView){
             RecordingSavedView(rActive: $rActive, source: .onboarding)

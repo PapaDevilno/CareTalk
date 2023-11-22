@@ -35,7 +35,7 @@ struct TipsView: View {
                 .padding(.top, 40)
                 Spacer()
                 NavigationLink {
-                    HowToRecordView(rActive: $rActive)
+                    HowToRecordView(rActive: $rActive, source: .onboarding)
                 } label: {
                     RoundedRectangleButton(text: "Tutup")
                         .padding(.bottom, 90)

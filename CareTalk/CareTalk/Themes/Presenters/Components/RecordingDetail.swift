@@ -10,7 +10,7 @@ import SwiftUI
 struct RecordingDetail: View {
     
 //    var recordingDetail: String
-    var recording : Recording
+    @State var recording : Recording
     var text: TranscriptionText
     
     var containerWidth: Double = 350.0
@@ -51,8 +51,10 @@ struct RecordingDetail: View {
                 Button(action: {
                     if recording.isPlaying == true {
                         vm.stopPlaying(url: recording.fileURL)
+                        recording.isPlaying.toggle()
                     }else{
                         vm.startPlaying(url: recording.fileURL, startTime: recording.selectedTime ?? 0)
+                        recording.isPlaying.toggle()
                     }
                     
                     

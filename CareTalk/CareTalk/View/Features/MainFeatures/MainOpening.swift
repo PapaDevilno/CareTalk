@@ -22,7 +22,7 @@ struct MainOpening: View {
                 
                 VStack (alignment: .leading){
                     
-                    NavBar()
+                    NavBar(rootActive: $isActive)
                     
                     
                 }
@@ -49,22 +49,15 @@ struct MainOpening: View {
                 
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity ,alignment: .topLeading)
-            
-            if !viewModel.animationComplete{
-                Circle()
-                    .fill(AppColor.pink)
-                    .frame(width: viewModel.isLongPressing ? 1000 : 100, height: viewModel.isLongPressing ? 1000 : 100)
-                    .scaleEffect(viewModel.isLongPressing ? 1 : 0.001)
-            }
+
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .gesture(
-            LongPressGesture(minimumDuration: 2.0)
+            LongPressGesture(minimumDuration: 1.0)
                 .onChanged { _ in
                     print("Long press started")
-                    withAnimation(Animation.easeInOut(duration: 2.0)) {
+                    withAnimation(Animation.easeInOut(duration: 1.0)) {
                         viewModel.isLongPressing = true
-                        viewModel.animationComplete = false
                     }
                 }
                 .onEnded { _ in
@@ -74,29 +67,15 @@ struct MainOpening: View {
                         viewModel.animationComplete = true
                         isActive = true
                     }
-                    
                 }
         )
-//        .gesture(
-//            DragGesture()
-//                .onChanged { gesture in
-//                    print("swiped")
-//                    if gesture.translation.width < -50 {
-//                        viewModel.navigateToNextView = true
-//                    }
-//                }
-//        )
-
         .navigationBarBackButtonHidden(true)
         .navigationDestination(isPresented: $isActive){
             MainListening(viewModel: OnboardingViewModel(), rootActive: $isActive)
         }
-        .navigationDestination(isPresented: $viewModel.navigateToNextView){
-            RecordingListView()
-        }
     }
 }
 
-#Preview {
-    MainOpening(viewModel: OnboardingViewModel())
-}
+//#Preview {
+//    MainOpening(viewModel: OnboardingViewModel())
+//}

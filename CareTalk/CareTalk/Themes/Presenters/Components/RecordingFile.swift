@@ -59,12 +59,14 @@ struct RecordingFile: View {
 //                Text("Time: \(vm.extractDateFunction(from: text.fileURL.lastPathComponent).extractedTime)")
                 HStack{
                     Text("Recording " + String(recording.name ?? 0))
-                        .font(.system(size: 25))
+                        .font(.system(size: 20))
                         .fontWeight(.semibold)
+                        .foregroundColor(.black)
                     Spacer()
                     Text("\(recording.duration ?? "saved timer error")")
-                        .font(.system(size: 25))
+                        .font(.system(size: 20))
                         .fontWeight(.semibold)
+                        .foregroundColor(.black)
                 }
                 .padding(.bottom, 5)
                 
@@ -73,11 +75,14 @@ struct RecordingFile: View {
                 
                 HStack{
                     Text("Date: \(vm.extractDateAndTime(from: text.fileURL.lastPathComponent)!.extractedDate)")
-                        .font(.system(size: 20))
+                        .font(.system(size: 18))
+                        .foregroundColor(.black)
                     Text(" at ")
-                        .font(.system(size: 20))
+                        .font(.system(size: 18))
+                        .foregroundColor(.black)
                     Text("time: \(vm.extractDateAndTime(from: text.fileURL.lastPathComponent)!.extractedTime)")
-                        .font(.system(size: 20))
+                        .font(.system(size: 18))
+                        .foregroundColor(.black)
                 }
                 
                 
