@@ -34,6 +34,7 @@
 		685FADDD2AFCAFA000E63529 /* OnboardingOpeningScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685FADDC2AFCAFA000E63529 /* OnboardingOpeningScreen.swift */; };
 		686040022AF214D100543524 /* YourViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686040012AF214D100543524 /* YourViewModel.swift */; };
 		686040042AF2150B00543524 /* YourModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686040032AF2150B00543524 /* YourModel.swift */; };
+		687192232B0EEE6600F54626 /* DysarhtriaModel3 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 687192222B0EEE6600F54626 /* DysarhtriaModel3 1.mlmodel */; };
 		6879858B2AF9DEEE008D8A71 /* HowToModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6879858A2AF9DEEE008D8A71 /* HowToModel.swift */; };
 		6879858D2AF9DEF3008D8A71 /* RecordingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6879858C2AF9DEF3008D8A71 /* RecordingModel.swift */; };
 		687985932AF9DF1B008D8A71 /* HowToComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6879858E2AF9DF1B008D8A71 /* HowToComponent.swift */; };
@@ -85,6 +86,7 @@
 		685FADDC2AFCAFA000E63529 /* OnboardingOpeningScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingOpeningScreen.swift; sourceTree = "<group>"; };
 		686040012AF214D100543524 /* YourViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourViewModel.swift; sourceTree = "<group>"; };
 		686040032AF2150B00543524 /* YourModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourModel.swift; sourceTree = "<group>"; };
+		687192222B0EEE6600F54626 /* DysarhtriaModel3 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "DysarhtriaModel3 1.mlmodel"; sourceTree = "<group>"; };
 		6879858A2AF9DEEE008D8A71 /* HowToModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToModel.swift; sourceTree = "<group>"; };
 		6879858C2AF9DEF3008D8A71 /* RecordingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingModel.swift; sourceTree = "<group>"; };
 		6879858E2AF9DF1B008D8A71 /* HowToComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToComponent.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				4D0271FC2B01D25F008828E6 /* ASR_(N+D)_BG.mlmodel */,
+				687192222B0EEE6600F54626 /* DysarhtriaModel3 1.mlmodel */,
 				68603FFA2AF213D900543524 /* Model */,
 				68603FFB2AF213E400543524 /* View */,
 				68603FFC2AF2140D00543524 /* ViewModel */,
@@ -404,6 +407,7 @@
 			files = (
 				686040022AF214D100543524 /* YourViewModel.swift in Sources */,
 				687985942AF9DF1B008D8A71 /* InstructionButton.swift in Sources */,
+				687192232B0EEE6600F54626 /* DysarhtriaModel3 1.mlmodel in Sources */,
 				68D6BD2F2AF33B930034533D /* OnboardingViewModel.swift in Sources */,
 				68E14A4D2B0EC9C500C307E0 /* AppDelegate.swift in Sources */,
 				4D0271FD2B01D25F008828E6 /* ASR_(N+D)_BG.mlmodel in Sources */,

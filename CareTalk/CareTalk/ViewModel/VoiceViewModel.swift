@@ -140,7 +140,10 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
             print("ERROR: - Audio Engine failed to start")
         }
         
-        resultObservation(with: observer)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { [self] in
+            self.resultObservation(with: observer)
+        }
+//        resultObservation(with: observer)
         
 //        recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
 //        guard let recognitionRequest = recognitionRequest else { fatalError("Unable to create a SFSpeechAudioBufferRecognitionRequest object") }
@@ -498,7 +501,8 @@ class VoiceViewModel : NSObject, ObservableObject , AVAudioPlayerDelegate{
     
     func classifierSetup() {
         let defaultConfig = MLModelConfiguration()
-        let soundClassifier = try? ASR__N_D__BG(configuration: defaultConfig)
+//        let soundClassifier = try? ASR__N_D__BG(configuration: defaultConfig)
+        let soundClassifier = try? DysarhtriaModel3_1(configuration: defaultConfig)
         
         guard let soundClassifier = soundClassifier else{
             fatalError("Could not instantiate sound classifier")
