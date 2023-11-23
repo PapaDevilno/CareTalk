@@ -64,7 +64,7 @@
 		4D7085812AFC7ED000D27FC0 /* Recording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 		4D7085832AFC84E200D27FC0 /* convertSectToMinAndHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = convertSectToMinAndHour.swift; path = CareTalk/Model/convertSectToMinAndHour.swift; sourceTree = SOURCE_ROOT; };
 		4D7085852AFC850200D27FC0 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Date.swift; path = CareTalk/Model/Date.swift; sourceTree = SOURCE_ROOT; };
-		680B4D7A2AE20FDE0047EDBA /* CareTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CareTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		680B4D7A2AE20FDE0047EDBA /* EVA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		680B4D7D2AE20FDE0047EDBA /* CareTalkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTalkApp.swift; sourceTree = "<group>"; };
 		680B4D7F2AE20FDE0047EDBA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		680B4D812AE20FDE0047EDBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,7 +131,7 @@
 		680B4D7B2AE20FDE0047EDBA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				680B4D7A2AE20FDE0047EDBA /* CareTalk.app */,
+				680B4D7A2AE20FDE0047EDBA /* EVA.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -338,9 +338,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		680B4D792AE20FDE0047EDBA /* CareTalk */ = {
+		680B4D792AE20FDE0047EDBA /* EVA */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 680B4D882AE20FDE0047EDBA /* Build configuration list for PBXNativeTarget "CareTalk" */;
+			buildConfigurationList = 680B4D882AE20FDE0047EDBA /* Build configuration list for PBXNativeTarget "EVA" */;
 			buildPhases = (
 				680B4D762AE20FDE0047EDBA /* Sources */,
 				680B4D772AE20FDE0047EDBA /* Frameworks */,
@@ -350,9 +350,9 @@
 			);
 			dependencies = (
 			);
-			name = CareTalk;
+			name = EVA;
 			productName = CareTalk;
-			productReference = 680B4D7A2AE20FDE0047EDBA /* CareTalk.app */;
+			productReference = 680B4D7A2AE20FDE0047EDBA /* EVA.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -370,7 +370,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 680B4D752AE20FDE0047EDBA /* Build configuration list for PBXProject "CareTalk" */;
+			buildConfigurationList = 680B4D752AE20FDE0047EDBA /* Build configuration list for PBXProject "EVA" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -383,7 +383,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				680B4D792AE20FDE0047EDBA /* CareTalk */,
+				680B4D792AE20FDE0047EDBA /* EVA */,
 			);
 		};
 /* End PBXProject section */
@@ -584,7 +584,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CareTalk/Preview Content\"";
-				DEVELOPMENT_TEAM = K685PAJ23Q;
+				DEVELOPMENT_TEAM = KGMG9ZB867;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = test;
@@ -599,7 +599,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = everyone.CareTalk.Hexamine1;
+				PRODUCT_BUNDLE_IDENTIFIER = everyone.CareTalk.6mine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -618,7 +618,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CareTalk/Preview Content\"";
-				DEVELOPMENT_TEAM = K685PAJ23Q;
+				DEVELOPMENT_TEAM = KGMG9ZB867;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = test;
@@ -633,7 +633,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = everyone.CareTalk.Hexamine1;
+				PRODUCT_BUNDLE_IDENTIFIER = everyone.CareTalk.6mine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -647,7 +647,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		680B4D752AE20FDE0047EDBA /* Build configuration list for PBXProject "CareTalk" */ = {
+		680B4D752AE20FDE0047EDBA /* Build configuration list for PBXProject "EVA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				680B4D862AE20FDE0047EDBA /* Debug */,
@@ -656,7 +656,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		680B4D882AE20FDE0047EDBA /* Build configuration list for PBXNativeTarget "CareTalk" */ = {
+		680B4D882AE20FDE0047EDBA /* Build configuration list for PBXNativeTarget "EVA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				680B4D892AE20FDE0047EDBA /* Debug */,
