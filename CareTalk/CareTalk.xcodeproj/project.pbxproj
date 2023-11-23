@@ -53,6 +53,7 @@
 		68D6BD2F2AF33B930034533D /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D6BD2E2AF33B930034533D /* OnboardingViewModel.swift */; };
 		68D6BD382AF354F80034533D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D6BD372AF354F80034533D /* CustomButton.swift */; };
 		68D6BD3D2AF35D610034533D /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D6BD3C2AF35D610034533D /* AppColor.swift */; };
+		68E14A4D2B0EC9C500C307E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E14A4C2B0EC9C500C307E0 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +104,7 @@
 		68D6BD2E2AF33B930034533D /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		68D6BD372AF354F80034533D /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		68D6BD3C2AF35D610034533D /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		68E14A4C2B0EC9C500C307E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				680B4D7D2AE20FDE0047EDBA /* CareTalkApp.swift */,
+				68E14A4C2B0EC9C500C307E0 /* AppDelegate.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				686040022AF214D100543524 /* YourViewModel.swift in Sources */,
 				687985942AF9DF1B008D8A71 /* InstructionButton.swift in Sources */,
 				68D6BD2F2AF33B930034533D /* OnboardingViewModel.swift in Sources */,
+				68E14A4D2B0EC9C500C307E0 /* AppDelegate.swift in Sources */,
 				4D0271FD2B01D25F008828E6 /* ASR_(N+D)_BG.mlmodel in Sources */,
 				4D7085822AFC7ED000D27FC0 /* Recording.swift in Sources */,
 				687985932AF9DF1B008D8A71 /* HowToComponent.swift in Sources */,

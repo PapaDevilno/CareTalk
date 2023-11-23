@@ -11,6 +11,8 @@ import UIKit
 @main
 struct CareTalkApp: App {
     
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     @StateObject var userSettings = UserSettings()
     @StateObject var vm = VoiceViewModel()
     
